@@ -1,0 +1,186 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — The Autopilot Life: A Blueprint for Personal Automation</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>The Autopilot Life: A Blueprint for Personal Automation</h1><p>Reclaim 10+ hours per week by deploying a custom-built ecosystem of automated workflows and digital triggers.</p><div class=dl><a href='/downloads/automate-my-life.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Prop Firm Pass Playbook: Payout Readiness Kit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, Inter, Arial, sans-serif; margin: 0; color: #161616; background: #f7f7f2; }
+    main { max-width: 880px; margin: 0 auto; padding: 42px 24px 80px; background: #fff; }
+    h1 { font-size: 38px; line-height: 1.04; margin: 0 0 16px; }
+    h2 { border-top: 2px solid #151515; padding-top: 24px; margin-top: 36px; }
+    h3 { margin-top: 24px; }
+    p, li { font-size: 17px; line-height: 1.58; }
+    li { margin: 7px 0; }
+  </style>
+</head>
+<body><main><h1>The Autopilot Life: A Blueprint for Personal Automation</h1>
+
+<h2>Introduction</h2>
+<p>This is not a guide on productivity tips; it is a technical manual for engineering a self-sustaining digital ecosystem. The goal is to move from &quot;manual execution&quot; to &quot;exception management.&quot; You are no longer the worker; you are the architect.</p>
+
+<p>---</p>
+
+<h2>1. The Automation Audit: Identifying High-Frequency, Low-Value Tasks</h2>
+
+<p>Before touching a single line of code or a No-Code tool, you must perform a **Temporal Audit**. Most people fail at automation because they attempt to automate complex, high-variance tasks. You must target **High-Frequency, Low-Variance (HFLV)** tasks.</p>
+
+<h3>The Decision Matrix</h3>
+<p>Map every recurring task on a 2x2 matrix:</p>
+<p>*   **Quadrant 1: High Frequency / Low Variance (The Sweet Spot):** Tasks that happen daily/weekly and follow a predictable pattern (e.g., downloading invoices, sorting receipts, logging time). **Automate these first.**</p>
+<p>*   **Quadrant 2: High Frequency / High Variance:** Tasks like responding to client emails. **Augment these with AI, do not automate fully.**</p>
+<p>*   ****Quadrant 3: Low Frequency / Low Variance:** Monthly reports. **Automate via scheduled triggers.**</p>
+<p>*   **Quadrant 4: Low Frequency / High Variance:** Deep work, strategic planning. **Do not automate.**</p>
+
+<h3>The Audit Workflow</h3>
+<p>1.  **Log everything for 72 hours:** Use a simple timestamped note in Notion or Obsidian.</p>
+<p>2.  **Categorize by &quot;Input&quot; and &quot;Output&quot;:** Every automation requires a Trigger (Input) and an Action (Output). If you cannot define the input clearly, you cannot automate it.</p>
+<p>3.  **Calculate the ROI:** (Time spent manually per month) - (Time spent building/maintaining automation) = Net Gain.</p>
+
+<p>**Pro-Tip:** Look for &quot;Copy-Paste Loops.&quot; If you find yourself moving data from a PDF to an Excel sheet, or a Gmail body to a CRM, that is your first automation candidate.</p>
+
+<p>---</p>
+
+<h2>2. The Tech Stack: Essential No-Code Tools and API Integrations</h2>
+
+<p>To build an autopilot life, you need a &quot;Central Nervous System.&quot;</p>
+
+<h3>The Core Layers</h3>
+<p>1.  **The Logic Engine (The Brain):** **Make.com** (formerly Integromat) or **Zapier**.</p>
+<p>    *   *Recommendation:* Use **Make.com** for complex logic. It allows for branching, advanced error handling, and much cheaper data manipulation via its visual canvas. Use **Zapier** only for simple, linear 1-step triggers.</p>
+<p>2.  **The Database (The Memory):** **Notion**, **Airtable**, or **Google Sheets**.</p>
+<p>    *   Airtable is superior for automation because of its robust API and &quot;Linked Record&quot; capabilities which allow for relational data structures.</p>
+<p>3.  **The Parser (The Eyes):** **OpenAI API (GPT-4o)** or **Docparser**.</p>
+<p>    *   This converts unstructured text (emails, PDFs) into structured JSON data.</p>
+<p>4.  **The Interface (The Hands):** **Telegram/Slack** or **iOS Shortcuts**.</p>
+<p>    *   Use these to send &quot;Approval Requests&quot; to yourself. An automation should never run blindly; it should ping you: &quot;I found an invoice. Should I log it? [Yes/No].&quot;</p>
+
+<p>**Pro-Tipp:** Never use Google Sheets as a primary database for high-volume automation. As the row count grows, API latency increases. Use Airtable or a dedicated SQL database for anything involving high-frequency triggers.</p>
+
+<p>---</p>
+
+<h2>3. Digital Inbox Zero: Automating Email Triage and Filtering</h2>
+
+<p>Stop reading every email. Start processing them via an **Automated Triage Pipeline**.</p>
+
+<h3>Implementation Recipe: The AI Triage Pipeline</h3>
+<p>**Goal:** Automatically categorize incoming emails and extract actionable tasks into Notion.</p>
+
+<p>**The Blueprint:**</p>
+<p>1.  **Trigger:** Gmail Module — &quot;Watch Emails.&quot; Set the filter to `label:INBOX`.</p>
+<p>2.  **Module 2: OpenAI (GPT-4o) — &quot;Create a Chat Completion&quot;.**</p>
+<p>    *   **System Prompt:** *&quot;You are an email triage assistant. Analyze the following email body. Determine if it is: [URGENT], [INFO ONLY], or [ACTION REQUIRED]. If [ACTION REQUIRED], extract a 1-sentence summary and a due date if mentioned. Return the result strictly in JSON format: `{&quot;category&quot;: &quot;...&quot;, &quot;summary&quot;: &quot;...&quot;, &quot;due_date&quot;: &quot;...&quot;}`&quot;*</p>
+<p>    *   **User Prompt:** `{{Email_Body_Text}}`</p>
+<p>3.  **Module 3: JSON Parser.** Use the &quot;Parse JSON&quot; module in Make.com to turn the AI&#x27;s string response into usable data fields.</p>
+<p>4.  **Router (The Logic Branch):**</p>
+<p>    *   **Path A (Action Required):** If `category` = `ACTION REQUIRED` $\rightarrow$ Action: **Notion &quot;Create Database Item&quot;**. Map `summary` to the Title and `due_date` to the Date property.</p>
+<p>    *   **Path B (Info Only):** If `category` = `INFO ONLY` $\rightarrow$ Action: **Gmail &quot;Archive Email&quot;**.</p>
+<p>    *   **Path C (Urgent):** If `category` = `URGENT` $\rightarrow$ Action: **Pushcut/Pushover Notification** to your phone.</p>
+
+<h3>Data Transformation: Using Regex for Extraction</h3>
+<p>If you receive standardized emails (e.g., subscription renewals), don&#x27;t use AI—use **Regex (Regular Expressions)** to save costs.</p>
+<p>*   **Scenario:** Extracting an Order ID from a string like `Order #12345-ABC confirmed`.</p>
+<p>*   **Pattern:** `Order\s#([A-Z0-9-]+)`</p>
+<p>*   **Implementation:** In Make.com, use the `replace` or `match` function with this pattern to isolate the ID.</p>
+
+<p>**Pro-Tip:** Use &quot;Filters&quot; in Make.com between modules to prevent the automation from running on &quot;Newsletter&quot; or &quot;Spam&quot; emails, saving you significant API costs.</p>
+
+<p>---</p>
+
+<h2>4. Calendar Mastery: Automating Scheduling and Appointment Management</h2>
+
+<p>The goal is to eliminate the &quot;back-and-forth&quot; dance of scheduling.</p>
+
+<h3>The Implementation Recipe: The Buffer-to-CRM Sync</h3>
+<p>**Goal:** When a new meeting is booked via Calendly, automatically create a meeting note template in Notion and a task in your Todoist.</p>
+
+<p>**The Blueprint:**</p>
+<p>1.  **Trigger:** Calendly — &quot;New Invitee Created.&quot;</p>
+<p>2.  **Action 1: Notion — &quot;Create Database Item&quot;.**</p>
+<p>    *   Map `Invitee Email` to the Person property.</p>
+<p>    *   Map `Event Start Time` to the Date property.</p>
+<p>    *   Set the Page Content to: `## Meeting Notes\n- [ ] Follow up with {{Invitee_Name}}\n- [ ] Review previous notes`.</p>
+<p>3.  **Action 2: Todoist — &quot;Create Task&quot;.**</p>
+<p>    *   Task Name: `Prepare for meeting with {{Invitee_Name}}`.</p>
+<p>    *   Due Date: `{{Event_Start_Time}}`.</p>
+
+<p>**Pro-Tip:** Set up a &quot;Buffer&quot; automation. If a meeting is booked within the next 2 hours, trigger a high-priority Slack notification. This prevents &quot;surprise&quot; meetings from disrupting deep work.</p>
+
+<p>---</p>
+
+<h2>5. Personal Finance Flow: Automating Expense Tracking and Budget Alerts</h2>
+
+<p>Manual expense logging is the highest-friction task in most lives.</p>
+
+<h3>The Implementation Recipe: The Receipt Scraper</h3>
+<p>**Goal:** Automatically parse emailed receipts and log them to a &quot;Finance Tracker&quot; Airtable.</p>
+
+<p>**The Blueprint:**</p>
+<p>1.  **Trigger:** Gmail — &quot;Watch Emails&quot; (Filter: `subject: &quot;Receipt&quot; OR &quot;Invoice&quot;`).</p>
+<p>2.  **Module 2: HTTP Request (or Mailhook).** Forward the email attachment to a webhook.</p>
+<p>3.  **Module 3: OpenAI (GPT-4o-vision).**</p>
+<p>    *   Input: The Attachment (Image/PDF).</p>
+<p>    *   Prompt: *&quot;Extract the Total Amount, Currency, Vendor Name, and Date from this receipt. Return as JSON.&quot;*</p>
+<p>4.  **Module 4: Airtable — &quot;Create Record&quot;.**</p>
+<p>    *   Map `Vendor` $\rightarrow$ Vendor Field.</p>
+<p>    *   Map `Amount` $\rightarrow$ Amount Field (ensure you use the `parseNumber` function in Make.com to strip currency symbols).</p>
+
+<p>**Pro-Tip:** Use a &quot;Regex&quot; pattern to clean up your &quot;Amount&quot; field. If the AI returns `$1,200.50`, use `{{replace(Amount; &quot;/[^0-9.]/g&quot;; &quot;&quot;)}}` to ensure it is a valid number for your spreadsheet calculations.</p>
+
+<p>---</p>
+
+<h2>6. Smart Home &amp; IoT: Automating Physical Environment Triggers</h2>
+
+<p>Automation shouldn&#x27;t stop at your screen. Use **IFTTT** or **Home Assistant** to bridge the digital and physical.</p>
+
+<h3>The Implementation Recipe: The &quot;Deep Work&quot; Trigger</h3>
+<p>**Goal:** When you start a &quot;Deep Work&quot; session on your computer (via a specific app or a manual button), dim the smart lights and set your Slack status to &quot;Do Not Disturb.&quot;</p>
+
+<p>**The Blueprint:**</p>
+<p>1.  **Trigger:** iOS Shortcut (on your iPhone) or a physical Button (Flic).</p>
+<p>2.  **Action 1: Webhook to Make.com.**</p>
+<p>3.  **Action 2: Slack — &quot;Update User Status&quot;.** Set status to 🚫.</p>
+<p>4.  **Action 3: Philips Hue/LIFX — &quot;Change Light Color&quot;.** Set to a focused cool white.</p>
+<p>5.  **Action 4: Webhook to IFTTT.** Trigger &quot;Turn on &#x27;Do Not Disturb&#x27; on Phone.&quot;</p>
+
+<p>**Pro-Tip:** Use &quot;Presence Detection.&quot; If your phone connects to your Home Wi-Fi, trigger a &quot;Start Day&quot; automation that fetches your daily calendar and reads it to you via a smart speaker.</p>
+
+<p>---</p>
+
+<h2>7. Data Synchronization: Connecting Your Apps via Zapier and Make</h2>
+
+<p>The &quot;Autopilot&quot; fails if your apps are silos. You need **Bi-Directional Sync**.</p>
+
+<h3>The Logic of Bi-Directional Sync</h3>
+<p>If you update a Task in Todoist, it must update in Notion.</p>
+<p>*   **The Trap:** Creating an infinite loop. (Task updated in Notion $\rightarrow$ Triggers Update in Todoist $\rightarrow$ Triggers Update in Notion...).</p>
+<p>*   **The Solution:** Use a &quot;Last Modified By&quot; or &quot;Source&quot; tag.</p>
+<p>    *   *Logic:* `If (ModifiedBy != &quot;Automation_Bot&quot;) { Perform Update }`.</p>
+
+<h3>Data Mapping Best Practices</h3>
+<p>*   **Standardize Formats:** Always convert dates to ISO 8601 (`YYYY-MM-DD`).</p>
+<p>*   **Error-Resistant Mapping:** Use the `ifempty` function. For example: `{{ifempty(Email_Subject; &quot;No Subject Provided&quot;)}}`. This prevents the automation from crashing when a field is null.</p>
+
+<p>---</p>
+
+<h2>8. The Maintenance Loop: Auditing and Updating Your Automations</h2>
+
+<p>Automations are not &quot;set and forget.&quot; They are &quot;set and monitor.&quot;</p>
+
+<h3>The Troubleshooting Manifesto</h3>
+<p>When an automation fails (and it will), follow this hierarchy:</p>
+<p>1.  **Check the Trigger:** Did the input arrive? (Check Gmail/Webhook logs).</p>
+<p>2.  **Check the JSON Structure:** Did the AI change its output format? (This is the #1 cause of failure). Use a &quot;JSON Validator&quot; to check your payload.</p>
+<p>3.  **Check the API Limits:** Have you hit your monthly Zapier/Make task quota?</p>
+<p>4.  **The Error Handling Pattern:** In Make.com, always use a **&quot;Break&quot;** or **&quot;Resume&quot;** directive on your error handler.</p>
+<p>    *   *The &quot;Error Handler&quot; Blueprint:*</p>
+<p>        *   `Error Trigger` $\rightarrow$ `Send Telegram Message (Error Details)` $\rightarrow$ `Store Error in Airtable (for Audit)`.</p>
+
+<h3>The Monthly Audit Checklist</h3>
+<p>*   [ ] **Review Logs:** Scan for &quot;Error&quot; status in your automation logs.</p>
+<p>*   [ ] **Cost Analysis:** Are you paying for 10,000 tasks but only using 2,000? Downsize your plan.</p>
+<p>*   [ ] **Security Check:** Rotate API keys every 90 days. Ensure no sensitive credentials (passwords) are hardcoded in your scripts.</p>
+<p>*   [ ] **Prune Dead Branches:** Delete automations for projects or tools you no longer use.</p>
+
+<p>**Pro-Tip:** Build a &quot;Dead Man&#x27;s Switch.&quot; Create a simple automation that sends you a &quot;System Healthy&quot; message every Monday at 9:00 AM. If you don&#x27;t receive that message, you know your &quot;Autopilot&quot; has crashed.</p></main></body></html>
+</body></html>

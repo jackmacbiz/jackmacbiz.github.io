@@ -1,0 +1,243 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — The AI-Augmented Engineer: Prompt Engineering & Workflow Architect</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>The AI-Augmented Engineer: Prompt Engineering & Workflow Architect</h1><p>Transform from a manual coder to an AI-orchestrator by mastering advanced prompting patterns and automated debugging workflows.</p><div class=dl><a href='/downloads/ai-tool-for-coding.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Prop Firm Pass Playbook: Payout Readiness Kit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, Inter, Arial, sans-serif; margin: 0; color: #161616; background: #f7f7f2; }
+    main { max-width: 880px; margin: 0 auto; padding: 42px 24px 80px; background: #fff; }
+    h1 { font-size: 38px; line-height: 1.04; margin: 0 0 16px; }
+    h2 { border-top: 2px solid #151515; padding-top: 24px; margin-top: 36px; }
+    h3 { margin-top: 24px; }
+    p, li { font-size: 17px; line-height: 1.58; }
+    li { margin: 7px 0; }
+  </style>
+</head>
+<body><main><h1>The AI-Augmented Engineer: Prompt Engineering &amp; Workflow Architect</h1>
+
+<p>This guide is not about &quot;how to use ChatGPT to write a function.&quot; It is a technical manual for transitioning from a manual coder to an AI Orchestr/Architect. We are moving away from the &quot;Chat&quot; interface and toward the &quot;Compiler&quot; mindset. To triple your velocity, you must treat the LLM as a high-latency, high-intelligence co-processor that requires precise instruction, strict context management, and rigorous verification.</p>
+
+<p>---</p>
+
+<h2>1. The Prompt Engineering Framework for Complex Logic</h2>
+
+<p>Standard prompting (e.g., &quot;Write a function to...&quot;) fails on complex logic because LLMs are probabilistic, not deterministic. To handle complex state machines or distributed systems, you must implement **Chain-of-Verification (CoVe)** and **Structured Logic Decomposition**.</p>
+
+<h3>The &quot;Logic-First&quot; Prompting Pattern</h3>
+<p>When implementing complex logic—such as a **Distributed Redlock implementation**—never ask for code immediately. Use a three-stage prompt sequence:</p>
+
+<p>1.  **The Specification Stage:** Define the constraints, edge cases, and concurrency requirements.</p>
+<p>2.  **The Pseudocode/Formal Logic Stage:** Force the LLM to output a Mermaid.js sequence diagram or a formal specification before any syntax is written.</p>
+<p>3.  **The Implementation Stage:** Only after the logic is verified do you request the implementation.</p>
+
+<p>**Case Study: Implementing a Distributed Lock with TTL and Fencing Tokens**</p>
+<p>*Prompting for this requires preventing the &quot;split-brain&quot; scenario.*</p>
+
+<p>**The Prompt Pattern:**</p>
+<p>&gt; &quot;Act as a Senior Systems Engineer. We are implementing a distributed locking mechanism using Redis.</p>
+<p>&gt; **Constraint 1:** The lock must include a &#x27;fencing token&#x27; (monotonically increasing ID) to prevent late-arriving writes from a client that lost its lease.</p>
+<p>&gt; **Constraint 2:** Use the Lua scripting pattern to ensure atomicity of the &#x27;set if not exists&#x27; and &#x27;extend TTL&#x27; operations.</p>
+<p>&gt; **Task:** First, provide a formal specification of the lock acquisition lifecycle. Second, provide the Lua script. Third, provide the TypeScript wrapper using `ioredis`.&quot;</p>
+
+<p>**The Resulting Implementation Logic (Complex State Machine):**</p>
+<p>Instead of a simple `setnx`, the AI-augmented engineer directs the LLM to generate a Lua script that handles the atomicity of the fencing token increment:</p>
+
+<p>```lua</p>
+<p>-- Lua script for atomic lock acquisition with fencing token</p>
+<p>local lock_key = KEYS[1]</p>
+<p>local token_key = KEYS[2]</p>
+<p>local client_id = ARGV[1]</p>
+<p>local ttl = ARGV[2]</p>
+
+<p>local current_token = redis.call(&#x27;incr&#x27;, token_key)</p>
+<p>local status = redis.call(&#x27;set&#x27;, lock_key, client_id, &#x27;NX&#x27;, &#x27;PX&#x27;, ttl)</p>
+
+<p>if status then</p>
+<p>    return {current_token, 1} -- Return new token and success status</p>
+<p>else</p>
+<p>    return {nil, 0} -- Return failure</p>
+<p>end</p>
+<p>```</p>
+
+<p>By forcing the LLM into this structured pattern, you eliminate the &quot;hallucinated logic&quot; where it might forget to implement the `NX` flag or the monotonic increment.</p>
+
+<p>---</p>
+
+<h2>2. Context Window Management: Feeding the Right Code Snippets</h2>
+
+<p>The &quot;Lost in the Middle&quot; phenomenon is the primary killer of AI-driven development. LLMs exhibit high recall for the beginning and end of a prompt but suffer significantly when critical logic is buried in the middle of a massive context dump.</p>
+
+<h3>Advanced Context Strategies:</h3>
+<p>*   **The Skeleton Method:** Do not feed the entire file. Feed the interface/type definitions and the specific function signatures. Use `grep` or `tree` to provide a structural map of the directory before providing the logic.</p>
+<p>*   / **The Dependency Pruning Technique:** When asking for a refactor, strip out all imports and logic that are not directly related to the transformation.</p>
+<p>*   **Context Chunking via Summarization:** If you must provide a large codebase, use a pre-processing script to generate &quot;Summarization Digests&quot; of each module. Feed these digests to the LLM first to build a &quot;Global Map,&quot; then provide the specific &quot;Local Code&quot; for the task at hand.</p>
+
+<p>---</p>
+
+<h2>3. Automated Unit Test Generation &amp; Regression Guardrails</h2>
+
+<p>Generating tests is easy; generating *meaningful* tests is hard. Most developers use a single prompt: &quot;Write tests for this.&quot; This results in trivial coverage that misses edge cases.</p>
+
+<h3>LLM-Driven Unit Test Refinement (The Multi-Step Sequence)</h3>
+<p>To achieve true regression guardrails, use this 3-step sequence to expand test coverage:</p>
+
+<p>**Step 1: The Boundary Analysis Prompt**</p>
+<p>&gt; &quot;Analyze the following function `calculateTax(amount: number, region: string)`. Identify all boundary conditions (e.g., zero, negative, extremely large numbers, invalid region strings) and list them as a checklist.&quot;</p>
+
+<p>**Step 2: The Implementation Prompt**</p>
+<p>&gt; &quot;Using the checklist generated in Step 1, write a Vitest suite. Use `each` for parameterized testing to ensure every boundary condition is covered. Ensure you mock the `TaxRateProvider` dependency.&quot;</p>
+
+<p>**Step 3: The Mutation Testing Prompt (The Pro Move)**</p>
+<p>&gt; &quot;I am providing a test suite and the original code. Act as a QA Engineer. Introduce a subtle logic error into the original code (e.g., changing a `&gt;` to a `&gt;=`). Now, check if the current test suite fails. If it passes, identify the gap in the test suite and write a new test case that would have caught this error.&quot;</p>
+
+<p>This creates a closed-scale loop where the AI is essentially performing **Mutation Testing** on its own output.</p>
+
+<p>---</p>
+
+<h2>4. Architectural Pattern Implementation via AI</h2>
+
+<p>An AI-augmented engineer uses LLMs to enforce architectural integrity. If you are moving from a Monolith to Microservices, the LLM should not just write code; it should act as a pattern enforcer.</p>
+
+<p>**The Pattern Template:**</p>
+<p>When implementing a new service, provide the LLM with a &quot;Service Blueprint&quot; (a Markdown file containing your architecture rules).</p>
+
+<p>**Example Prompt for Hexagonal Architecture:**</p>
+<p>&gt; &quot;We are implementing a new &#x27;Payment Service&#x27; using Hexagonal Architecture.</p>
+<p>&gt; **Domain Layer:** Must contain only pure logic, no dependencies on frameworks.</p>
+<p>&gt; **Application Layer:** Contains Use Cases and Port interfaces.</p>
+<p>  **Infrastructure Layer:** Contains Adapters (e.g., TypeORM, Stripe API).</p>
+<p>  **Constraint:** Do not allow any `import` from `infrastructure` inside the `domain` folder.</p>
+<p>  **Task:** Generate the folder structure and the `PaymentUseCase` interface.&quot;</p>
+
+<p>---</p>
+
+<h2>5. Refactoring Legacy Codebases with LLM Agents</h2>
+
+<p>Refactoring legacy code is high-risk. You cannot rely on a single prompt. You must use an **Agentic Workflow**—a loop of *Refactor -&gt; Test -&gt; Verify*.</p>
+
+<h3>The Refactoring Loop:</h3>
+<p>1.  **Summarization Agent:** Reads the legacy file and creates a &quot;Functional Map&quot; (what it does) and a &quot;Technical Debt List&quot; (what is wrong).</p>
+<p>2.  **Refactor Agent:** Takes the map and the debt list to produce a refactored version.</p>
+<p>3.  **Verification Agent:** Runs the existing test suite against the new code.</p>
+<p>4.  **Correction Agent:** If tests fail, it analyzes the diff and the error log to propose a fix.</p>
+
+<p>---</p>
+
+<h2>6. Building a Custom RAG Pipeline for Your Private Documentation</h2>
+
+<p>Standard RAG (Retrieval-Augmented Generation) fails in coding because code is highly structural. Simple vector similarity (Cosine Similarity) often retrieves irrelevant snippets because it lacks &quot;Syntax Awareness.&quot;</p>
+
+<h3>Mitigating the &quot;Lost in the Middle&quot; and Retrieval Noise</h3>
+<p>To build a professional-grade RAG for your company&#x27;s internal SDKs, implement **Hybrid Search with Re-ranking**:</p>
+
+<p>1.  **Chunking by AST (Abstract Syntax Tree):** Do not chunk by character count. Use a parser (like `tree-sitter`) to chunk by function and class boundaries. This ensures a function is never split in half.</p>
+<p>2.  **The Re-ranking Step:**</p>
+<p>    *   **Step A (Retrieval):** Use a fast, dense retriever (like BM25 or a standard vector search) to grab the top 20 candidates.</p>
+<p>    *   **Step B (Re-ranking):** Pass those 20 candidates through a **Cross-Encoder** (e.g., `cross-encoder/ms-marco-MiniLM-L-6-v2`). The Cross-Encoder looks at the query and the code snippet simultaneously to determine true semantic relevance.</p>
+<p>    *   **Step C (Context Injection):** Only feed the top 5 re-ranked snippets to the LLM. This prevents the &quot;Lost in the Middle&quot; effect by ensuring the most relevant code is at the very top of the prompt.</p>
+
+<p>---</p>
+
+<h2>7. The AI-First Debugging Workflow: From Error Log to Patch</h2>
+
+<p>The goal is to minimize the &quot;Time to Patch.&quot;</p>
+
+<p>**The Workflow:**</p>
+<p>1.  **Log Ingestion:** Pipe your stderr/logs into a structured format.</p>
+<p>2.  **The Contextual Trace:** Use a script to extract the stack trace and the *surrounding 50 lines* of the failing function.</p>
+<p>3.  **The Prompt:**</p>
+<p>    &gt; &quot;Error: `TypeError: Cannot read property &#x27;id&#x27; of undefined` at `UserService.ts:42`.</p>
+<p>    &gt; **Context:** [Insert Code Snippet]</p>
+<p>    &gt; **Trace:** [Insert Stack Trace]</p>
+<p>    &gt; **Task:** Identify the root cause. Is it a race condition, a null-pointer, or a failed dependency injection? Provide a patch in a `diff` format.&quot;</p>
+
+<p>---</p>
+
+<h2>8. Integrating AI into CI/CD Pipelines for Automated PR Reviews</h2>
+
+<p>The pinnacle of the AI-augmented engineer is the **Automated PR Reviewer**. This is not just a &quot;linter&quot;; it is a semantic reviewer.</p>
+
+<h3>Technical Breakdown: GitHub Actions Integration</h3>
+<p>We implement a GitHub Action that triggers on `pull_request`. It uses a Python script to extract the `git diff` and sends it to an LLM with a &quot;Reviewer Persona&quot; prompt.</p>
+
+<p>**The GitHub Action Workflow (`.github/workflows/ai-review.yml`):**</p>
+
+<p>```yaml</p>
+<p>name: AI Semantic Reviewer</p>
+
+<p>on:</p>
+<p>  pull_request:</p>
+<p>    branches: [ main ]</p>
+
+<p>jobs:</p>
+<p>  ai-review:</p>
+<p>    runs-on: ubuntu-latest</p>
+<p>    steps:</p>
+<p>      - name: Checkout Code</p>
+<p>        uses: actions/checkout@v4</p>
+<p>        with:</p>
+<p>          fetch-depth: 0 # Essential to get the full history for diffs</p>
+
+<p>      - name: Setup Python</p>
+<p>        uses: actions/setup-python@v4</p>
+<p>        with:</p>
+<p>          python-version: &#x27;3.10&#x27;</p>
+
+<p>      - name: Install Dependencies</p>
+<p>        run: pip install openai gitpython</p>
+
+<p>      - name: Run AI Review Script</p>
+<p>        env:</p>
+<p>          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}</p>
+<p>          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}</p>
+<p>        run: |</p>
+<p>          python scripts/ai_reviewer.py</p>
+<p>```</p>
+
+<p>**The `ai_reviewer.py` Logic (Internal Implementation):**</p>
+<p>This script must use `git diff origin/main...HEAD` to identify only the changed lines, preventing context overflow.</p>
+
+<p>```python</p>
+<p>import os</p>
+<p>from git import Repo</p>
+<p>from openai import OpenAI</p>
+
+<p>client = OpenAI(api_key=os.getenv(&quot;OPENAI_API_KEY&quot;))</p>
+
+<p>def get_diff():</p>
+<p>    repo = Repo(&quot;.&quot;)</p>
+<p>    # Compare the feature branch to the main branch</p>
+<p>    diff_index = repo.git.diff(&quot;origin/main...HEAD&quot;)</p>
+<p>    return diff_index</p>
+
+<p>def review_code(diff):</p>
+<p>    prompt = f&quot;&quot;&quot;</p>
+<p>    You are a Senior Staff Engineer. Review the following Git Diff for:</p>
+<p>    1. Logic errors or concurrency issues.</p>
+<p>    2. Security vulnerabilities (SQLi, XSS, etc.).</p>
+<p>    3. Performance bottlenecks.</p>
+
+<p>    Format your response as a list of &#x27;CRITICAL&#x27;, &#x27;WARNING&#x27;, and &#x27;NITPICK&#x27;.</p>
+
+<p>    DIFF:</p>
+<p>    {diff}</p>
+<p>    &quot;&quot;&quot;</p>
+
+<p>    response = client.chat.completions.create(</p>
+<p>        model=&quot;gpt-4-turbo-preview&quot;,</p>
+<p>        messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt}]</p>
+<p>    )</p>
+<p>    return response.choices[0].message.content</p>
+
+<p>if __name__ == &quot;__main__&quot;:</p>
+<p>    diff_content = get_diff()</p>
+<p>    if diff_content:</p>
+<p>        review_feedback = review_code(diff_content)</p>
+<p>        print(f&quot;AI Review Results:\n{review_feedback}&quot;)</p>
+<p>        # In a real implementation, use the GitHub API to post this as a comment</p>
+<p>```</p>
+
+<p>**The Result:**</p>
+<p>Instead of a human waiting 4 hours for a review, the AI provides an immediate, semantic critique of the logic, leaving the human reviewer to focus only on high-level architectural alignment. This is how you achieve 3x velocity.</p></main></body></html>
+</body></html>

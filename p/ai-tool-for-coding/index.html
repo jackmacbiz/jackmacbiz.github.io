@@ -1,4 +1,4 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — The AI-Augmented Engineer: Prompt Engineering & Workflow Architect</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>The AI-Augmented Engineer: Prompt Engineering & Workflow Architect</h1><p>Master the art of generating production-ready, bug-free code by transforming LLMs from simple autocomplete tools into autonomous coding agents.</p><div class=dl><a href='/downloads/ai-tool-for-coding.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — The AI-Augmented Engineer: Prompt Engineering & Workflow Automation for Rapid Development</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>The AI-Augmented Engineer: Prompt Engineering & Workflow Automation for Rapid Development</h1><p>Slash your development lifecycle by 50% using advanced LLM orchestration and automated testing workflows.</p><div class=dl><a href='/downloads/ai-tool-for-coding.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -14,262 +14,289 @@
     li { margin: 7px 0; }
   </style>
 </head>
-<body><main><h1>The AI-Augmented Engineer: Prompt Engineering &amp; Workflow Architect</h1>
+<body><main><h1>The AI-Augmented Engineer: Prompt Engineering &amp; Workflow Automation for Rapid Development</h1>
 
-<p>This guide is not about how to write better &quot;chat&quot; messages. It is a technical manual for re-engineering your cognitive workflow. To achieve 10x velocity, you must stop treating LLMs as a search engine and start treating them as a junior engineer with infinite memory but zero intuition.</p>
-
-<p>---</p>
-
-<h2>1. The Prompting Framework: Context-Injection &amp; System Instructions</h2>
-
-<p>The most common failure in AI-assisted coding is &quot;Context Dilution.&quot; When you provide a vague prompt, the LLM fills the vacuum with generic patterns from its training data, leading to non-idiomatic code.</p>
-
-<h3>The Triple-Layer Context Injection (TLCI) Template</h3>
-<p>Never prompt without the following three layers. Use this structure for every complex task:</p>
-
-<p>**[LAYER 1: The Environment Persona]**</p>
-<p>Define the tech stack, versions, and linting rules.</p>
-<p>&gt; &quot;You are a Senior Staff Engineer specializing in Go 1.21 and PostgreSQL 15. Adhere strictly to Uber&#x27;s Go Style Guide. Use `sqlc` for type-safe queries.&quot;</p>
-
-<p>**[LAYER 2: The Architectural Constraints]**</p>
-<p>Define the boundaries.</p>
-<p>&gt; &quot;Constraints: No external dependencies outside of the standard library and `pgx`. All database interactions must use a connection pool. Interface boundaries must be defined before implementation.&quot;</p>
-
-<p>**[LAYER 3: The Task Specifics (The &#x27;What&#x27;)]**</p>
-<p>The actual logic.</p>
-
-<p>#### ❌ The &quot;Bad&quot; Prompt (The Autocomplete Trap)</p>
-<p>`&quot;Write a function in Node.js to handle user login with JWT.&quot;`</p>
-<p>*Result: Generic, insecure, uses outdated `jsonwebtoken` patterns, no error handling, no type safety.*</p>
-
-<p>#### ✅ The &quot;Architect&quot; Prompt (The TLCI Method)</p>
-<p>```markdown</p>
-<h1>Role</h1>
-<p>Senior Backend Engineer (TypeScript, NestJS, Prisma)</p>
-
-<h1>Context</h1>
-<p>File: `src/auth/auth.service.ts`</p>
-<p>Existing Dependency: `bcrypt`, `@nestjs/jwt`</p>
-<p>Architecture: Repository Pattern.</p>
-
-<h1>Task</h1>
-<p>Implement the `validateUser` method.</p>
-
-<h1>Implementation Requirements</h1>
-<p>1. Use the `UserRepository` to fetch the user by email.</p>
-<p>2. Compare the hashed password using `bcrypt.compare`.</p>
-<p>3. If successful, generate a JWT containing `{sub: user.id, role: user.role}`.</p>
-<p>4. Error Handling: Throw a `UnauthorizedException` if credentials fail.</p>
-<p>5. Logging: Use the internal `Logger` service to log failed attempts.</p>
-
-<h1>Output Format</h1>
-<p>Return only the TypeScript code block. Ensure all types are explicitly defined.</p>
-<p>```</p>
+<h2>Introduction: The New Unit of Value</h2>
+<p>In the traditional software engineering model, your value was tied to your typing speed, your syntax memorization, and your ability to debug via manual trace. In the AI-augmented era, these are commodities. Your new value is **Architectural Intent** and **Verification Rigor**. To increase your billable output, you must transition from being a &quot;writer of code&quot; to an &quot;orchestrster of logic.&quot;</p>
 
 <p>---</p>
 
-<p> Implemented via `.cursorrules` or `.clinerules`, this framework ensures that every time you hit &quot;Tab,&quot; the AI is already aware of your project&#x27;s architectural boundaries.</p>
+<h2>1. The AI-First Mindset: Moving from Writing Code to Reviewing Logic</h2>
+
+<p>The biggest mistake engineers make is treating LLMs like a better version of Google Search. They are not. They are high-speed, probabilistic reasoning engines.</p>
+
+<p>To slash your lifecycle, you must adopt the **&quot;Reviewer-in-Chief&quot;** mindset.</p>
+<p>*   **The 80/20 Rule of Coding:** The AI generates the 80% (boilerplate, standard patterns, implementation details). You provide the 20% (business logic constraints, security requirements, and integration architecture).</p>
+<p>*   **The Verification Loop:** Never trust a block of code you didn&#x27;t write. Your job is to build a &quot;Verification Pipeline&quot; where every AI output is passed through a secondary, specialized prompt designed to find flaws in the first prompt&#x27;s output.</p>
 
 <p>---</p>
 
-<h2>2. Architectural Prompting: Mapping Requirements to Boilerplate</h2>
+<h2>2. Advanced Prompt Engineering for Complex Architecture Design</h2>
 
-<p>To prevent &quot;Code Sprawl,&quot; you must use a **Top-Down Decomposition** workflow. Never ask for logic until you have established the Skeleton.</p>
+<p>Basic prompting fails on complex systems because the LLM loses track of global constraints. You must use **Structural Prompting** with Delimiters and **Chain-of-Thought (CoT) Constraints**.</p>
 
-<h3>The &quot;Skeleton-First&quot; Workflow</h3>
-<p>1.  **Phase 1: Interface Definition.** Prompt the AI to generate only `.d.ts` or Interface files.</p>
-<p>2.  **Phase 2: The Dependency Graph.** Prompt the AI to identify which services need to be injected.</p>
-<p>3.  **Phase 3: The Implementation.** Provide the interfaces from Phase 1 as context to Phase 3.</p>
-
-<p>**Prompt Recipe: The Boilerplate Generator**</p>
-<p>Use this when starting a new module:</p>
-<p>```text</p>
-<p>Analyze the attached `schema.prisma`.</p>
-<p>Generate a structural blueprint for a New Module &#x27;Billing&#x27;.</p>
-<p>Required files:</p>
-<li>billing.service.ts (Interface and Class Skeleton)</li>
-<li>billing.controller.ts (Route definitions)</li>
-<li>billing.dto.ts (Validation logic using class-validator)</li>
-<p>Do not implement business logic yet; only provide the method signatures and type definitions.</p>
-<p>```</p>
-
-<p>---</p>
-
-<h2>3. Technical Debt Reduction: The &quot;Migration Plan&quot; Workflow</h2>
-
-<p>AI is uniquely capable of identifying &quot;Code Smells&quot; that human eyes miss during a long sprint. Use it to map architectural rot.</p>
-
-<h3>Mapping Dependency Graphs &amp; Identifying Rot</h3>
-<p>Do not ask &quot;Is this code bad?&quot; Instead, use the **Entropy Audit Prompt**:</p>
-
-<p>**The Entropy Audit Prompt:**</p>
-<p>```text</p>
-<p>Scan the attached directory `src/legacy_module/`.</p>
-<p>1. Identify all tight couplings where `Module A` directly instantiates `Module B` instead of using Dependency Injection.</p>
-<p>2. List all functions with a Cyclomatic Complexity &gt; 10.</p>
-<p>3. Identify any &#x27;God Objects&#x27; (classes exceeding 500 lines).</p>
-<p>Output: A JSON-formatted &#x27;Migration Plan&#x27; containing:</p>
-<p>{ &quot;issue&quot;: &quot;string&quot;, &quot;severity&quot;: &quot;low|med|high&quot;, &quot;refactor_strategy&quot;: &quot;string&quot;, &quot;impacted_files&quot;: [] }</p>
-<p>```</p>
-
-<h3>The Multi-File Refactor Recipe</h3>
-<p>When converting legacy code (e.g., Express to NestJS), use this XML-tagged prompt to prevent the LLM from losing track of file relationships:</p>
-
-<p>```xml</p>
-<p>&lt;instruction&gt;</p>
-<p>Refactor the attached Express middleware into a NestJS Interceptor.</p>
-<p>&lt;/instruction&gt;</p>
-
-<p>&lt;source_code&gt;</p>
-<p>[Paste legacy code here]</p>
-<p>&lt;/source_code&gt;</p>
-
-<p>&lt;target_architecture&gt;</p>
-<p>NestJS, Decorator-based, Class-based.</p>
-<p>&lt;/target_architecture&gt;</p>
-
-<p>&lt;mapping_rules&gt;</p>
-<li>Map `req.user` to `ExecutionContext`.</li>
-<li>Convert `next()` calls to `return`.</li>
-<p>&lt;/mapping_rules&gt;</p>
-<p>```</p>
-
-<p>---</p>
-
-<h2>4. The Debugging Loop: Tracing, Explaining, and Patching</h2>
-
-<p>Debugging with AI fails when you simply paste an error. You must provide the **Execution Trace**.</p>
-
-<h3>The Trace-Injection Pattern</h3>
-<p>When an error occurs, do not just send the error message. Send the **Chain of Causality**:</p>
-<p>1.  **The Error:** The stack trace.</p>
-<p>2.  **The Input:** The exact JSON payload that caused the crash.</p>
-<p>3.  **The State:** The values of key variables at the time of the crash.</p>
-
-<p>**Prompt Recipe: The Logic Error Surgeon**</p>
-<p>```text</p>
-<p>Error: `TypeError: Cannot read property &#x27;id&#x27; of undefined`</p>
-<p>Stack Trace: [Insert Trace]</p>
-<p>Input Payload: { &quot;userId&quot;: 123, &quot;metadata&quot;: null }</p>
-<p>Current Logic: [Insert Code Snippet]</p>
-
-<p>Task:</p>
-<p>1. Trace the lifecycle of the `userId` variable through the provided snippet.</p>
-<p>2. Identify the exact line where the null pointer originates.</p>
-<p>3. Provide a patch that implements a defensive check without breaking the existing API contract.</p>
-<p>```</p>
-
-<p>---</p>
-
-<p> Verifying the fix requires the &quot;Unit Test Automation&quot; step below.</p>
-
-<p>---</p>
-
-<h2>5. Unit Test Automation: Generating Comprehensive Test Suites</h2>
-
-<p>The goal is not &quot;code coverage&quot; (a vanity metric), but &quot;assertion density.&quot;</p>
-
-<h3>The Assertion-Driven Prompting (ADP)</h3>
-<p>To avoid &quot;shallow tests&quot; (tests that pass but check nothing), force the AI to use **Edge Case Injection**.</p>
-
-<p>**Prompt Recipe: The Test Suite Architect**</p>
-<p>```text</p>
-<p>Generate a Vitest suite for the `UserService.create` method.</p>
-<p>Requirements:</p>
-<p>1. Happy Path: Valid user creation.</p>
-<p>2. Edge Case: User with duplicate email (should throw error).</p>
-<p>3. Edge Case: Malformed JSON payload.</p>
-<p>4. Boundary Test: Extremely long strings in the &#x27;bio&#x27; field.</p>
-<p>5. Dependency Mocking: Use `vi.mock` for the `PrismaClient`.</p>
-
-<p>Constraint: Every test case must include an assertion for the return type AND an assertion for the side effect in the database.</p>
-<p>```</p>
-
-<p>---</p>
-
-<h2>6. Security &amp; Edge Case Auditing: Vulnerability Detection</h2>
-
-<h3>The Adversarial Auditor Prompt</h3>
-<p>Stop using generic security prompts. Use **Context-Specific Vulnerability Probes**.</p>
-
-<p>**Example: Detecting SQL Injection/Broken Access Control**</p>
-<p>```text</p>
-<p>Analyze the following SQL query construction logic in `src/db/queryBuilder.ts`.</p>
-<p>Act as an adversarial security researcher.</p>
-<p>Identify if any user-controlled input from `req.query` reaches the `db.execute()` call without sanitization.</p>
-<p>Specifically, look for:</p>
-<p>1. Potential for SQL injection via string interpolation.</p>
-<p>ical 2. Insecure Direct Object Reference (IDOR) where a user could modify `orderId` to access another user&#x27;s data.</p>
-
-<p>Output: A list of vulnerabilities in Markdown, including a &#x27;Proof of Concept&#x27; payload for each.</p>
-<p>```</p>
-
-<p>---</p>
-
-<h2>7. Integrating AI Agents: Building Custom Workflows</h2>
-
-<p>Stop using the ChatGPT web interface for coding. Use **Agentic IDEs** (Cursor, Aider, or VS Code with Cline) and configure a `.cursorrules` file.</p>
-
-<h3>The `.cursorrules` Configuration Strategy</h3>
-<p>The `.cursorrules` file is your &quot;System Prompt&quot; for your entire codebase. A high-performance rule file should look like this:</p>
+<h3>The &quot;Architectural Blueprint&quot; Template</h3>
+<p>When designing a new microservice, do not ask &quot;Write a Python service for X.&quot; Use this multi-step, delimited template:</p>
 
 <p>```markdown</p>
-<h1>Project Rules: [Project Name]</h1>
+<h3>ROLE</h3>
+<p>You are a Senior Staff Engineer specializing in Distributed Systems and Python/FastAPI.</p>
 
-<h2>Coding Standards</h2>
-<li>Use functional programming patterns where possible.</li>
-<li>No `any` types; use `unknown` if type is truly unknown.</li>
-<li>Always use Zod for runtime validation.</li>
+<h3>CONTEXT</h3>
+<p>We are building a high-throughput telemetry ingestion service.</p>
+<p>Constraints:</p>
+<li>Latency &lt; 50ms</li>
+<li>Must use PostgreSQL with TimescaleDB extension.</li>
+<li>Must implement the Outbox Pattern for reliable messaging.</li>
 
-<h2>Workflow Instructions</h2>
-<li>Before writing any code, always search the `@docs` folder for relevant architectural patterns.</li>
-<li>When creating a new service, always create a corresponding `.spec.ts` file.</li>
-<li>If you see a pattern that deviates from the established `src/patterns` folder, alert the user.</li>
+<h3>SYSTEM ARCHITECTURE SCHEMA</h3>
+<p>[Insert Schema Definition or Mermaid.js Diagram Here]</p>
 
-<h2>Tech Stack Specifics</h2>
-<li>Database: PostgreSQL via Prisma.</li>
-<li>Auth: Clerk.</li>
+<h3>TASK</h3>
+<p>Decompose the following requirements into a technical specification:</p>
+<p>1. Define the Pydantic models for incoming telemetry.</p>
+<p>2. Outline the SQLAlchemy ORM mapping.</p>
+<p>3. Design the Kafka producer logic using an asynchronous pattern.</p>
+
+<h3>EXECUTION RULES</h3>
+<li>Use `Instructional Delimiters` (e.g., &lt;logic&gt;, &lt;schema&gt;, &lt;implementation&gt;).</li>
+<li>Apply &lt;Few-Shot&gt; examples for error handling patterns.</li>
+<li>Output must strictly follow the &quot;Interface-First&quot; design principle.</li>
+
+<h3>OUTPUT FORMAT</h3>
+<p>Return a structured JSON object containing:</p>
+<p>{</p>
+<p>  &quot;components&quot;: [],</p>
+<p>  &quot;data_flow&quot;: &quot;&quot;,</p>
+<p>  &quot;potential_bottlenecks&quot;: []</p>
+<p>}</p>
 <p>```</p>
 
-<p>By defining these rules, you transform the AI from a &quot;chat bot&quot; into a &quot;project-aware agent&quot; that understands your specific architectural decisions.</p>
+<h3>Technical Settings for Coding</h3>
+<p>*   **Temperature (0.0 - 0.2):** Use for logic, syntax, and refactoring. You want deterministic, reproducible code.</p>
+<p>*   **Temperature (0.7 - 0.8):** Use for brainstorming architectural alternatives or generating creative test cases.</p>
+<p>*   **Top-P (0.9):** Keeps the vocabulary diverse but prevents the &quot;hallucination of syntax&quot; common in low Top-P settings.</p>
 
 <p>---</p>
 
-<h2>8. Case Study: Implementing a Redis-Backed Rate Limiter</h2>
+<h2>3. Automating Unit Test Generation and Edge Case Discovery</h2>
 
-<p>Let&#x27;s walk through the full lifecycle of a production-ready feature.</p>
+<p>Testing is the most tedious part of the SDLC. We will automate this by creating a &quot;Test Generator&quot; that consumes your implementation and produces a PyTest suite.</p>
 
-<p>**Step 1: Interface Definition (The Blueprint)**</p>
-<p>*Prompt:* &quot;Define an interface `IRateLimiter` for a Redis-backed implementation. It should have a `checkLimit(key: string, limit: number, window: number): Promise&lt;boolean&gt;` method.&quot;</p>
+<h3>The Few-Shot Test Generation Prompt</h3>
+<p>Use this template to ensure the AI understands your specific testing style (e.g., using `pytest-mock` or `factory_boy`).</p>
 
-<p>**Step 2: Skeleton Generation (The Structure)**</p>
-<p>*Prompt (using TLCI):* &quot;Implement the `RedisRateLimiter` class following the `IRateLimiter` interface. Use the `ioredis` library. Use the &#x27;Fixed Window&#x27; algorithm. Provide only the class structure and constructor.&quot;</p>
+<p>```text</p>
+<h3>TASK: GENERATE PYTEST SUITE</h3>
+<h3>STYLE GUIDE:</h3>
+<li>Use `pytest.mark.parametrize` for all input variations.</li>
+<li>Use `unittest.mock` for all external API calls.</li>
+<li>Always include a &quot;Negative Test Case&quot; for unauthorized access.</li>
 
-<p>**Step 3: Implementation (The Logic)**</p>
-<p>*Prompt:* &quot;Complete the `checkLimit` method. Use the `INCR` and `EXPIRE` commands in a single `multi()` transaction to ensure atomicity. Handle the case where the Redis connection is lost by defaulting to `true` (fail-open).&quot;</p>
+<h3>EXAMPLES (FEW-SHOT):</h3>
 
-<p>**Step 4: Unit Test Automation (The Verification)**</p>
-<p>*Prompt:* &quot;Generate Vitest tests for the `RedisRateLimiter`. Mock `ioredis`. Test the &#x27;window expiration&#x27; logic by simulating the passage of time using `vi.useFakeTimers()`.&quot;</p>
+<p>Input: `def get_user(user_id: int) -&gt; User: ...`</p>
+<p>Output:</p>
+<p>```python</p>
+<p>@pytest.mark.parametrize(&quot;user_id&quot;, [1, 2, 99])</p>
+<p>def test_get_user_success(user_id, db_session):</p>
+<p>    # Test logic here...</p>
+<p>```</p>
+
+<h3>CURRENT CODE TO TEST:</h3>
+<p>[PASTE YOUR CODE HERE]</p>
+
+<h3>TARGET TEST COVERAGE:</h3>
+<p>1. Happy path (valid ID).</p>
+<p>2. Boundary conditions (ID = 0, ID = max_int).</p>
+<p>3. Error states (Database connection timeout).</p>
+<p>4. Security (SQL Injection attempts in string inputs).</p>
+<p>```</p>
 
 <p>---</p>
 
-<h2>9. Metrics: Measuring Your 10x Velocity</h2>
+<h2>4. Integrating LLM APIs into Existing CI/CD Pipelines</h2>
 
-<p>&quot;10x&quot; is a claim that must be backed by data. Use these two metrics to track your progress:</p>
+<p>To achieve a 50% reduction in lifecycle, you cannot manually prompt. You must integrate an **AI Code Reviewer** directly into your GitHub Actions.</p>
 
-<p>1.  **The PR Cycle Time (PCT):**</p>
-<p>    *   *Formula:* `(Time of PR Creation) - (Time of Initial Task Assignment)`.</p>
-<p>    *   *Goal:* A 50% reduction in PCT over 3 months.</p>
-<p>2.  **The Regression Rate (RR):**</p>
-<p>    *   *Formula:* `(Number of Bugs found in QA) / (Total Number of AI-Generated PRs)`.</p>
-<p>    *   *Goal:* An RR of &lt; 5%. If this increases, your &quot;Context Injection&quot; is failing, and you are producing &quot;hallucinated&quot; logic.</p>
+<h3>The `ai_reviewer.py` Implementation</h3>
+<p>This script, when run in a CI environment, takes a `git diff`, sends it to an LLM (OpenAI/Anthropic), and posts the critique as a PR comment.</p>
 
-<p>**Summary Table for the AI-Augmented Engineer**</p>
+<p>```python</p>
+<p>import os</p>
+<p>import openai</p>
+<p>import subprocess</p>
 
-<p>| Phase | Tool/Method | Primary Goal |</p>
-<p>| :--- | :--- | :--- |</p>
-<p>| **Development** | TLCI Prompting | Eliminate generic/non-idiomatic code. |</p>
-<p>| **Refactoring** | Entropy Audit Prompt | Identify and automate technical debt removal. |</p>
-<p>| **Testing** | Assertion-Driven Prompting | Increase test density and edge-case coverage. |</p>
-<p>| **Maintenance** | `.cursorrules` | Maintain architectural consistency across the team. |</p></main></body></html>
+<h1>Configuration</h1>
+<p>OPENAI_API_KEY = os.getenv(&quot;OPENAI_API_KEY&quot;)</p>
+<p>client = openai.OpenAI(api_key=OPENAI_API_KEY)</p>
+
+<p>def get_git_diff():</p>
+<p>    &quot;&quot;&quot;Extracts the changes in the current PR/Commit.&quot;&quot;&quot;</p>
+<p>    result = subprocess.run([&#x27;git&#x27;, &#x27;diff&#x27;, &#x27;origin/main...HEAD&#x27;], capture_output=True, text=True)</p>
+<p>    return result.stdout</p>
+
+<p>def analyze_diff_with_ai(diff_content):</p>
+<p>    &quot;&quot;&quot;Sends the diff to the LLM for architectural review.&quot;&quot;&quot;</p>
+<p>    prompt = f&quot;&quot;&quot;</p>
+<p>    You are an automated CI/CD Code Reviewer.</p>
+<p>    Analyze the following git diff for:</p>
+<p>    1. Security vulnerabilities (SQLi, XSS, Insecure Defaults).</p>
+<p>    2. Performance regressions (N+1 queries, inefficient loops).</p>
+<p>    3. Logic errors.</p>
+
+<p>    DIFF:</p>
+<p>    {diff_content}</p>
+
+<p>    Respond ONLY in Markdown format. Use headings for each category.</p>
+<p>    &quot;&quot;&quot;</p>
+
+<p>    response = client.chat.comabilities.create(</p>
+<p>        model=&quot;gpt-4-turbo&quot;,</p>
+<p>        messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt}],</p>
+<p>        temperature=0</p>
+<p>    )</p>
+<p>    return response.choices[0].message.content</p>
+
+<p>if __name__ == &quot;__main__&quot;:</p>
+<p>    diff = get_git_diff()</p>
+<p>    if diff.strip():</p>
+<p>        print(&quot;Analyzing changes...&quot;)</p>
+<p>        review = analyze_diff_with_ai(diff)</p>
+<p>        with open(&quot;ai_review_report.md&quot;, &quot;w&quot;) as f:</p>
+<p>            f.write(review)</p>
+<p>        print(&quot;Review complete. Report saved to ai_review_report.md&quot;)</p>
+<p>    else:</p>
+<p>        print(&quot;No changes detected.&quot;)</p>
+<p>```</p>
+
+<p>**GitHub Action Workflow Snippet (`.github/workflows/ai-review.yml`):**</p>
+<p>```yaml</p>
+<p>name: AI Code Review</p>
+<p>on: [pull_request]</p>
+<p>jobs:</p>
+<p>  review:</p>
+<p>    runs-on: ubuntu-latest</p>
+<p>    steps:</p>
+<p>      - uses: actions/checkout@v3</p>
+<p>        with:</p>
+<p>          fetch-depth: 0</p>
+<p>      - name: Set up Python</p>
+<p>        uses: actions/setup-python@v4</p>
+<p>        with:</p>
+<p>          python-version: &#x27;3.10&#x27;</p>
+<p>      - name: Install Dependencies</p>
+<p>        run: pip install openai</p>
+<p>      - name: Run AI Reviewer</p>
+<p>        env:</p>
+<p>          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}</p>
+<p>        run: python scripts/ai_reviewer.py</p>
+<p>```</p>
+
+<p>---</p>
+
+<h2>5. Refactoring Legacy Codebases with Context-Aware AI Agents</h2>
+
+<p>Refactoring &quot;spaghetti code&quot; requires more than just a prompt; it requires **Context Injection**.</p>
+
+<h3>The &quot;Context-Window&quot; Strategy</h3>
+<p>When refactoring a large file, do not paste the whole file. Use a **&quot;Skeleton-First&quot;** approach:</p>
+<p>1.  **Step 1 (Extract Skeleton):** Use a script to extract only function signatures and class definitions (no bodies) from the legacy file.</p>
+<p>2.  **Step 2 (Analyze Skeleton):** Feed the skeleton to the LLM to ask for a &quot;Refactoring Plan.&quot;</p>
+<p>3.  **Step 3 (Iterative Implementation):** Feed the implementation of *one* function at a time, along with the previously refactored signatures, to ensure type-safety and interface consistency.</p>
+
+<p>---</p>
+
+<h2>6. The Security Layer: Auditing AI-Generated Code</h2>
+
+<p>AI-generated code is prone to &quot;hallucinated libraries&quot; and &quot;insecure patterns.&quot;</p>
+
+<p>**Your Security Checklist for AI Code:**</p>
+<p>*   **Dependency Verification:** Does the `requirements.txt` contain a package that doesn&#x27;t exist? (Common in GPT-4 hallucinations).</p>
+<p>*   **Symmetric Encryption Check:** If the AI suggests `AES` implementation, verify it includes a unique `IV` (Initialization Vector) and uses `PBKDF2` for key derivation.</p>
+<p>*   **The &quot;Prompt Injection&quot; Audit:** Ensure that any user-inputted strings passed into the AI-generated logic are properly sanitized via a library like `bleach` or `Pydantic`.</p>
+
+<p>---</p>
+
+<h2>7. Building Custom GPTs for Domain-Specific Coding Standards</h2>
+
+<p>Standardize your freelance output by building a &quot;Company-Standard GPT.&quot;</p>
+<p>**Instructions for your Custom GPT:**</p>
+<p>1.  **Knowledge Base:** Upload your company&#x27;s `styleguide.md`, `api_spec.yaml`, and `database_schema.sql`.</p>
+<p>2.  **System Prompt:** &quot;You are the [Your Name] Engineering Agent. Every piece of code you generate must adhere to the patterns found in the uploaded `styleguide.md`. If a pattern is not found, default to PEP8 and use Type Hints.&quot;</p>
+
+<p>---</p>
+
+<h2>8. Scaling Output: Managing Large-Scale Codebase Context Windows</h2>
+
+<p>As codebases grow, you hit the &quot;Context Wall.&quot;</p>
+<p>*   **Use RAG (Retrieval-Augmented Generation):** Instead of pasting code, use a tool like `aider` or `Cursor` that indexes your local files into a vector database.</p>
+<p>*   **The &quot;Map-Reduce&quot; Prompting Method:**</p>
+<p>    *   **Map:** Ask the AI to summarize each module in your project.</p>
+<p>    *   **Reduce:** Feed those summaries into a final prompt to design the cross-module integration.</p>
+
+<p>---</p>
+
+<h2>Case Study: Refactoring a Monolithic Payment Processor</h2>
+
+<p>**The Problem:** A client provided a 1,500-line `payment_processor.py` containing mixed logic for Stripe, PayPal, and manual bank transfers, all wrapped in a single, untestable function.</p>
+
+<p>**The Workflow:**</p>
+<p>1.  **Prompt 1 (Extraction):** &quot;Analyze this function. Identify all external dependencies and list the distinct business rules for each payment provider.&quot;</p>
+<p>2.  **Prompt 2 (Strategy):** &quot;Design a Strategy Pattern implementation to replace this monolith. Provide the Abstract Base Class (ABC) and the interface for `StripeProvider` and `PayPalProvider`.&quot;</p>
+<p>3.  **Prompt 3 (Implementation):** (Iteratively providing one provider at a time).</p>
+
+<p>**The Result:**</p>
+<p>*   **Before:** 1,500 lines of unmaintainable code; 0% test coverage.</p>
+<p>*   **After:** 4 discrete classes; 95% unit test coverage; 70% reduction in lines of code (removed redundant logic).</p>
+<p>*   **Time Taken:** 45 minutes of prompting and verification vs. an estimated 6 hours of manual refactoring.</p>
+
+<p>---</p>
+
+<h2>The Prompt Library: Copy-Pasteable Utility</h2>
+
+<h3>Prompt: SQL Optimization</h3>
+<p>```text</p>
+<h3>TASK: SQL QUERY OPTIMIZATION</h3>
+<h3>INPUT QUERY:</h3>
+<p>[PASTE QUERY]</p>
+
+<h3>CONSTRAINTS:</h3>
+<li>Target Database: PostgreSQL 15</li>
+<li>Avoid: Subqueries in SELECT clauses; Use CTEs instead.</li>
+<li>Goal: Minimize Sequential Scans; Maximize Index Usage.</li>
+
+<h3>OUTPUT:</h3>
+<p>1. Optimized Query.</p>
+<p>2. Explanation of changes.</p>
+<p>3. Recommended Indexes (CREATE INDEX statements).</p>
+<p>```</p>
+
+<h3>Prompt: RegEx Generation</h3>
+<p>```text</p>
+<h3>TASK: COMPLEX REGEX GENERATION</h3>
+<h3>LOGIC:</h3>
+<p>Match strings that follow this pattern: [A-Z]{3}-[0-9]{4}-[a-z]{2} (e.g., ABC-1234-xy).</p>
+<p>Include validation for:</p>
+<li>No special characters allowed.</li>
+<li>The numeric part must not start with &#x27;0&#x27;.</li>
+
+<h3>OUTPUT:</h3>
+<li>The Regex string.</li>
+<li>A Python `re.match` implementation snippet.</li>
+<li>A list of 5 Test Cases (Pass/Fail).</li>
+<p>```</p>
+
+<p>---</p>
+
+<h2>Cost-Benefit Analysis: The ROI of AI-Augmentation</h2>
+
+<p>| Metric | Manual Engineering | AI-Augmented Engineering | Impact |</p>
+<p>| :--- | :--- | :--- | :--- |</p>
+<p>| **Avg. Feature Dev Time** | 12 Hours | 4 Hours | **-66% Time** |</p>
+<p>| **Unit Test Coverage Effort** | 3 Hours | 30 Minutes | **-83% Effort** |</p>
+<p>| **Cost (Developer @ $100/hr)** | $1,500 | $450 (Dev) + $5 (Tokens) | **-70% Cost** |</p>
+<p>| **Error Rate (Complexity)** | High (Human Fatigue) | Low (Automated Review) | **Higher Quality** |</p>
+
+<p>**Conclusion:** The transition to an AI-first workflow is not about replacing your brain; it is about offloading the high-frequency, low-value tasks to an infinitely scalable engine, allowing you to focus on the high-value architectural decisions that command premium rates.</p></main></body></html>
 </body></html>

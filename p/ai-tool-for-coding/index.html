@@ -1,4 +1,4 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — The AI-Driven Engineer: Workflow Architect Kit</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>The AI-Driven Engineer: Workflow Architect Kit</h1><p>Transform from a manual coder to an AI-orchestrator by mastering prompt engineering, automated testing, and codebase maintenance using LLMs.</p><div class=dl><a href='/downloads/ai-tool-for-coding.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — Ai Tool For Coding</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>Ai Tool For Coding</h1><p>A practical kit for ai tool for coding.</p><div class=dl><a href='/downloads/ai-tool-for-coding.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -14,209 +14,189 @@
     li { margin: 7px 0; }
   </style>
 </head>
-<body><main><h1>The AI-Driven Engineer: Workflow Architect Kit</h1>
+<body><main><h1>The AI-Augmented Developer: A Professional Kit for High-Velocity Engineering</h1>
 
-<h2>The AI-First Mental Model: Moving from Syntax to Logic</h2>
+<h2>Overview</h2>
+<p>The era of &quot;writing code&quot; is being replaced by the era of &quot;reviewing logic.&quot; This guide is not about how to use ChatGPT to write a Python script; it is about transforming your workflow into an AI-orchestrated pipeline.</p>
 
-<p>The transition from a traditional developer to an AI-Orchestrator requires a fundamental shift in cognitive load. In the manual era, 80% of your energy was spent on syntax, boilerplate, and API-specific implementation details. In the AI-driven era, syntax is a commodity. Your value resides in **Architectural Intent**.</p>
-
-<p>To 10x your output, you must stop writing code and start writing **Specifications of Intent**. This involves moving from &quot;How to implement&quot; to &quot;What the system must guarantee.&quot;</p>
-
-<p>**The Cognitive Shift:**</p>
-<p>*   **Old Model:** Writing a `for` loop to filter a list of users based on age.</p>
-<p>*   **New Model:** Defining the invariant properties of the `User` filtering service and the edge cases for the boundary conditions (e.g., null handling, timezone shifts).</p>
-
-<p>You are no longer a bricklayer; you are the building inspector. Your primary tool is no longer the keyboard, but the **Logical Constraint**.</p>
+<p>To use AI effectively for professional software engineering, you must move away from &quot;Chatting&quot; and move toward &quot;Context Injection.&quot; The goal is to treat the LLM (Large Language Model) not as a search engine, but as a junior engineer with infinite knowledge but zero context of your specific codebase. This kit provides the technical framework to bridge that context gap, allowing you to automate boilerplate, refactor legacy logic, and implement complex features with 10x speed.</p>
 
 <p>---</p>
 
-<h2>Prompt Engineering for Complex Refactoring: The Contextual Transformation Framework</h2>
+<h2>Tool Configuration: Automating Context Injection</h2>
 
-<p>Generic prompting (e.g., &quot;Refactor this function&quot;) leads to &quot;hallucinated elegance&quot;—code that looks clean but breaks subtle dependencies. To perform complex refactoring, use the **Contextual Transformation Framework (CTF)**.</p>
+<p>The biggest failure in AI coding is &quot;Context Drift&quot;—when the AI suggests code that uses deprecated libraries or ignores your existing architectural patterns. To fix this, you must move beyond simple copy-pasting.</p>
 
-<h3>The CTF Framework</h3>
-<p>A high-quality refactoring prompt must contain four distinct layers:</p>
-<p>1.  **The Source Anchor:** The raw code block.</p>
-<p>2.  **The Structural Blueprint:** The target design pattern (e.g., Strategy Pattern, Dependency Injection).</p>
-<p>3.  **The Constraint Set:** Explicit &quot;do nots&quot; (e.g., &quot;Do not introduce external dependencies,&quot; &quot;Maintain O(n) complexity&quot;).</p>
-<p>4.  **The Semantic Reference:** The specific documentation or interface definitions that the new code must adhere to.</p>
+<h3>1. Configuring `.cursorrules` (The &quot;Brain&quot; of your IDE)</h3>
+<p>If you use Cursor (the industry standard for AI coding), you must use a `.cursorrules` file in your root directory. This file acts as a permanent system prompt that the AI reads before every interaction.</p>
 
-<h3>Case Study: Refactoring a Monolithic Python Function</h3>
-
-<p>**Before (The &quot;Spaghetti&quot; Function):**</p>
-<p>```python</p>
-<p>def process_order(order, user, db_session):</p>
-<p>    if order.status == &#x27;pending&#x27;:</p>
-<p>        if user.is_active:</p>
-<p>            tax = 0.05 if user.region == &#x27;US&#x27; else 0.15</p>
-<p>            total = order.amount + (order.amount * tax)</p>
-<p>            order.total = total</p>
-<p>            # Update database</p>
-<p>            query = f&quot;UPDATE orders SET total = {total} WHERE id = {order.id}&quot;</p>
-<p>            db_session.execute(query)</p>
-<p>            # Send email</p>
-<p>            send_email(user.email, &quot;Order Processed&quot;, f&quot;Total: {total}&quot;)</p>
-<p>            order.status = &#x27;processed&#x27;</p>
-<p>        else:</p>
-<p>            raise Exception(&quot;Inactive user&quot;)</p>
-<p>    return order</p>
-<p>```</p>
-<p>*Issues: SQL Injection vulnerability, hardcoded tax logic, tight coupling to email service, and lack of transaction atomicity.*</p>
-
-<p>**The Prompt (Using CTF):**</p>
-<p>&gt; **Role:** Senior Backend Engineer.</p>
-<p>&gt; **Task:** Refactor the provided `process_order` function.</p>
-<p>&gt; **Reference Pattern:** Implement the Strategy Pattern for tax calculation based on `user.region`.</p>
-<p>&gt; **Constraints:**</p>
-<p>&gt; 1. Use SQLAlchemy ORM instead of raw SQL strings to prevent injection.</p>
-<p>&gt; 2. Extract the email logic into a `NotificationService` interface.</p>
-<p>&gt; 3. Ensure the database update and status change are wrapped in a single ACID transaction.</p>
-<p>&gt; 4. Maintain the existing function signature for backward compatibility.</p>
-<p>&gt; **Source:** [Insert Code Block Above]</p>
-
-<p>**After (The Orchestrated Output):**</p>
-<p>```python</p>
-<p>def process_order(order, user, db_session, tax_strategy: TaxStrategy, notifier: NotificationService):</p>
-<p>    try:</p>
-<p>        with db_session.begin():</p>
-<p>            tax_amount = tax_strategy.calculate(order.amount, user.region)</p>
-<p>            order.total = order.amount + tax_amount</p>
-<p>            order.status = &#x27;processed&#x27;</p>
-
-<p>            # Using ORM to prevent SQL Injection</p>
-<p>            db_session.add(order)</p>
-
-<p>            notifier.send_order_confirmation(user.email, order.total)</p>
-<p>    except Exception as e:</p>
-<p>        db_session.rollback()</p>
-<p>        logger.error(f&quot;Order processing failed: {e}&quot;)</p>
-<p>        raise OrderProcessingError(str(e))</p>
-<p>    return order</p>
+<p>**Template for `.cursorrules`:**</p>
+<p>```markdown</p>
+<h1>Project Standards: [Project Name]</h1>
+<li>Tech Stack: Next.js 14 (App Router), TypeScript, Tailwind CSS, Prisma, Zod.</li>
+<li>Architecture: Use the Service Pattern. Logic resides in /services, not /api.</li>
+<li>Type Safety: Never use &#x27;any&#x27;. Always define Zod schemas for incoming payloads.</li>
+<li>Error Handling: Use a custom &#x27;AppError&#x27; class. Always wrap async logic in try/catch blocks that log to our internal logger.</li>
+<li>Styling: Use Tailwind utility classes only. No CSS modules allowed.</li>
+<li>Testing: Every new service must have a corresponding .spec.ts file using Vitest.</li>
 <p>```</p>
 
-<p>---</p>
-
-<h2>Automated Unit Test Generation Strategies</h2>
-
-<p>The greatest risk of AI-generated code is the &quot;silent failure&quot;—code that runs but fails on edge cases. To mitigate this, do not ask the AI to &quot;write tests.&quot; Ask it to **&quot;generate a test suite based on a Boundary Value Analysis (BVA) matrix.&quot;**</p>
-
-<h3>Implementation Strategy:</h3>
-<p>1.  **Input Analysis:** Extract the function&#x27;s input types and constraints.</p>
-<p>2.  **Edge Case Matrix Generation:** Instruct the LLM to generate a table of inputs including `None`, `0`, `MAX_INT`, empty strings, and malformed JSON.</p>
-<p>3.  **Test Implementation:** Use a tool like `pytest` and instruct the LLM to use `hypothesis` (Property-Based Testing) to automate the discovery of failing inputs.</p>
-
-<p>**Prompt Example:**</p>
-<p>&gt; &quot;Analyze the `process_order` function. Generate a `pytest` suite using `hypothesis`. Specifically, create a strategy for the `order.amount` field to test for negative values, zero, and extremely large floats. Ensure you include a test case for a database connection timeout.&quot;</p>
+<h3>2. The `Context-Map` Strategy</h3>
+<p>When working on a complex feature, the AI cannot &quot;see&quot; your whole folder structure efficiently. You must provide a `context-map.md`.</p>
+<li>**Action:** Create a file called `docs/context-map.md`.</li>
+<li>**Content:** List the critical files, their responsibilities, and their dependencies.</li>
+<li>**Usage:** When starting a new task, your first prompt should be: *&quot;Read @context-map.md and @schema.prisma to understand our data layer before we begin.&quot;*</li>
 
 <p>---</p>
 
-<h2>Integrating LLMs into the CI/CD Pipeline: The Linter-in-the-Loop</h2>
+<h2>Prompt Engineering for Code: Advanced Techniques</h2>
 
-<p>To scale, you must move LLM verification from your local IDE to the CI/CD pipeline. We implement a **Linter-in-the-Loop** pattern.</p>
+<h3>1. Chain-of-Thought (CoT) for Debugging Stack Traces</h3>
+<p>When an error occurs, do not just paste the error. Use a **Deconstruction Prompt**.</p>
 
-<h3>The Workflow:</h3>
-<p>1.  **Standard Linting:** Run `Ruff` or `ESLint` to catch syntax/style errors.</p>
-<p>2.  **LLM-Based Semantic Review:** A GitHub Action triggers a script that sends the `git diff` to an LLM (via OpenAI/Anthropic API).</p>
-<p>3.  **Feedback Loop:** The LLM analyzes the diff specifically for **Logical Regressions** and **Security Vulnerabilities**.</p>
-<p>4.  **Automated Commenting:** The results are posted as a PR comment.</p>
+<p>**The Technique:** Force the AI to analyze the stack trace layer by layer before suggesting a fix. This prevents the AI from &quot;hallucinating&quot; a quick fix that ignores the root cause.</p>
 
-<p>**The Implementation Pattern (GitHub Actions Example):**</p>
-<p>```yaml</p>
-<p>jobs:</p>
-<p>  ai-review:</p>
-<p>    runs-on: ubuntu-latest</p>
-<p>    steps:</p>
-<p>      - uses: actions/checkout@v3</p>
-<p>        with:</p>
-<p>          fetch-depth: 2</p>
-<p>      - name: AI Semantic Review</p>
-<p>        env:</p>
-<p>          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}</p>
-<p>        run: |</p>
-<p>          git diff HEAD^ HEAD &gt; diff.patch</p>
-<p>          python scripts/ai_reviewer.py diff.patch</p>
-<p>```</p>
-<p>*The `ai_reviewer.py` script should utilize a system prompt that focuses solely on &quot;logic-altering changes&quot; to avoid noise.*</p>
+<p>**The Prompt Template:**</p>
+<p>&gt; &quot;I am receiving the following error: [Paste Error].</p>
+<p>&gt;</p>
+<p>&gt; **Follow these steps strictly:**</p>
+<p>&gt; 1. Analyze the stack trace and identify the exact line of failure.</p>
+<p>&gt; 2. Trace the data flow from the entry point (the Controller) through the Service layer to the Repository.</p>
+<p>&gt; 3. Identify which specific type mismatch or null-pointer is the likely culprit.</p>
+<p>                4. Propose three potential fixes: one &#x27;quick patch&#x27; and one &#x27;architecturally sound&#x27; refactor.</p>
+<p>&gt; 5. Only after providing the analysis, write the corrected code.&quot;</p>
 
-<p>---</p>
+<h3>2. Few-Shot Prompting for Pattern Replication</h3>
+<p>If you need the AI to write a new API endpoint, don&#x27;t describe the pattern. **Show it.**</p>
 
-<h2>Debugging and Error Resolution via Context Injection</h2>
+<p>**The &quot;Bad Prompt&quot; (Generic):**</p>
+<p>*&quot;Write a new API route for deleting a user.&quot;*</p>
+<p>*Result:* The AI uses generic Express syntax, forgets your Zod validation, and ignores your error handling patterns.</p>
 
-<p>Standard debugging is reactive. AI-driven debugging is proactive through **Context Injection**.</p>
-
-<p>When an error occurs, do not just paste the stack trace. You must provide the **execution context**.</p>
-
-<h3>Advanced Context Injection Technique:</h3>
-<p>Instead of raw text, use **Symbolic Context Extraction**. If you are using a tool like `Continue.dev` or `Cursor`, you should leverage `tree-sitter` or similar AST-based parsing to feed the LLM only the relevant symbols.</p>
-
-<p>**The Injection Hierarchy:**</p>
-<p>1.  **The Error:** The stack trace and the specific error message.</p>
-<p>2.  **The Local Scope:** The variables currently in scope during the crash.</p>
-<p>3.  **The Dependency Context:** The interface definitions of the libraries involved (e.g., the specific SQLAlchemy model definition).</p>
-<p>4.  **The Recent History:** The last 3 commits related to this file.</p>
-
-<p>**Pro-Tip: Avoid &quot;Token Bloat&quot;**</p>
-<p>Never paste an entire library&#x27;s source code. Use a script to extract only the **Class Signatures** and **Method Docstrings** of the dependencies. This provides the LLM with the &quot;What&quot; without overwhelming the context window with the &quot;How.&quot;</p>
+<p>**The &quot;Pro Prompt&quot; (Few-Shot):**</p>
+<p>*&quot;I need to implement a DELETE endpoint for &#x27;Projects&#x27;.</p>
+<p>Refer to @src/api/users/delete.ts for the pattern.</p>
+<p>Notice how I use Zod for param validation and the custom AppError for 404s.</p>
+<p>Match this exact structure for the Project deletion route, ensuring you use the ProjectService.delete method.&quot;*</p>
 
 <p>---</p>
 
-<h2>Managing Context Windows and Token Efficiency</h2>
+<h2>Prompt Library: The Professional Toolkit</h2>
 
-<p>The &quot;Context Window&quot; is your most expensive and limited resource. Overloading it leads to &quot;Lost in the Middle&quot; syndrome, where the LLM ignores instructions in the center of a long prompt.</p>
+<p>Copy and paste these templates into your workflow.</p>
 
-<h3>The Token Budgeting Strategy:</h3>
-<p>*   **Summarization Triage:** Before sending a large file, use a &quot;Summarizer Prompt&quot; to create a compressed version of the file containing only function signatures and logic summaries.</p>
-<p>*   **RAG-based Code Retrieval:** For large repositories, use a local RAG (Retrieiring Augmented Generation) setup. When a bug is reported in `auth.py`, your system should search for `auth.py` + `database_schema.sql` + `user_model.py` and only inject those three files.</p>
-<p>*   **AST-based Pruning:** Use a Python script to parse your code into an Abstract Syntax Tree (AST). Strip out all comments, docstrings, and implementation details, leaving only the structure. This can reduce token usage by up to 60% without losing the structural logic.</p>
+<h3>Library 1: The &quot;Refactor to Clean Code&quot; Prompt</h3>
+<p>**Use Case:** When you have &quot;spaghetti&quot; code in a single large function.</p>
+<p>&gt; &quot;Analyze the following function: [Paste Code].</p>
+<p>&gt;</p>
+<p>&gt; **Refactoring Requirements:**</p>
+<p>&gt; 1. Extract logic into smaller, pure functions.</p>
+<p>&gt; 2. Implement the &#x27;Single Responsibility Principle&#x27;.</p>
+<p>&gt; 3. Replace nested if-else statements with early returns (Guard Clauses).</p>
+<p>&gt; 4. Ensure all extracted functions are typed with TypeScript interfaces.</p>
+
+<p>&gt; 5. Maintain the exact same functional output and error handling behavior.&quot;</p>
+
+<h3>Library 2: The &quot;Test Suite Generator&quot;</h3>
+<p>**Use Case:** Generating Vitest/Jest suites that actually pass.</p>
+<p>&gt; &quot;Review the following service: [Paste Code].</p>
+<p>&gt;</p>
+<p>&gt; **Task:** Write a comprehensive Vitest suite.</p>
+<p>&gt; **Requirements:**</p>
+<p>&gt; 1. Use `vi.mock` to mock all external database dependencies.</p>
+<p>&gt; 2. Include test cases for: Success path, Resource Not Found (404), and Validation Error (400).</p>
+<p>&gt; 3. Use `describe` blocks to group tests by method name.</p>
+<p>&gt; 4. Ensure coverage for edge cases involving null/undefined inputs.&quot;</p>
+
+<h3>Library 3: The &quot;Schema Migration Architect&quot;</h3>
+<p>**Use Case:** Changing database structures without breaking the app.</p>
+<p>&gt; &quot;I need to add a &#x27;subscription_status&#x27; field to the &#x27;User&#x27; table in Prisma.</p>
+<p>&gt;</p>
+<p>&gt; **Instructions:**</p>
+<p>&gt; 1. Generate the Prisma migration command.</p>
+<p>&gt; 2. Update the Zod schema in @src/lib/validations/user.ts to include this field.</p>
+<p>&gt; 3. Update the UserDTO in @src/dtos/user.dto.ts.</p>
+<p>&gt; 4. Identify any existing service methods that will break due to this change and provide the updated logic.&quot;</p>
 
 <p>---</p>
 
-<h2>The Cost of Hallucination: The Three-Point Audit</h2>
+<h2>Case Study: Implementing a Stripe Webhook Handler</h2>
+<p>*Scenario: We need to implement a webhook listener that listens for `checkout.session.completed` to provision a subscription in our database.*</p>
 
-<p>LLMs are prone to **Subtle Logic Hallucination**. A classic example is the &quot;SQLAlchemy Query Hallucination,&quot; where the LLM suggests a method like `.filter_by_id()` which does not exist in the current version of the library, or worse, suggests a query that is syntactically correct but logically flawed (e.g., forgetting an `.order_by()` in a pagination query).</p>
+<h3>Step 1: The Architectural Prompt (The Setup)</h3>
+<p>Instead of asking for code, we ask for a plan.</p>
+<p>**Prompt:** *&quot;I need to implement a Stripe Webhook handler. We use Next.js Route Handlers and Prisma. Before writing code, outline the architectural steps required to ensure security (signature verification) and idempotency (preventing double-processing).&quot;*</p>
 
-<h3>The Three-Point Audit (3PA)</h3>
-<p>To prevent shipping hallucinations, every AI-generated block must pass the 3PA:</p>
+<p>**AI Output (The Plan):**</p>
+<p>1. Verify Stripe signature using `stripe.webhooks.constructEvent`.</p>
+<p>2. Check `event.type`.</p>
+<p>3. Use a database transaction to:</p>
+<p>   - Find the user by `client_reference_id`.</p>
+<p>   - Update `subscription_status` to &#x27;active&#x27;.</p>
+<p>   - Log the event in a `WebhookEvent` table to ensure idempotency.</p>
 
-<p>1.  **Syntactic Audit (The Linter):** Does the code pass `mypy` and `ruff`? If it fails type checking, the hallucination is caught.</p>
-<p>2.  **Contract Audit (The Interface):** Does the generated code call methods that actually exist in the current version of the dependency? (Cross-reference with the `requirements.txt` or `pyproject.toml`).</p>
-<p>3.  **Invariant Audit (The Test):** Does the code pass the &quot;Boundary Value Analysis&quot; tests generated in the previous section?</p>
+<h3>Step 2: The Implementation (The Implementation)</h3>
+<p>**Prompt:** *&quot;Using the plan above, write the Next.js Route Handler. Use the pattern found in @src/api/stripe/success.ts. Ensure you use `rawBody` for signature verification as required by Stripe.&quot;*</p>
 
-<p>---</p>
+<p>**The Resulting Code (Snippet of the Pro Output):**</p>
+<p>```typescript</p>
+<p>import { NextResponse } from &#x27;next/server&#x27;;</p>
+<p>import Stripe from &#x27;stripe&#x27;;</p>
+<p>import { stripe } from &#x27;@/lib/stripe&#x27;;</p>
+<p>import { db } from &#x27;@/lib/db&#x27;;</p>
 
-<h2>Automated Agentic Workflows: Moving to Autonomy</h2>
+<p>export async function POST(req: Request) {</p>
+<p>  const body = await req.text(); // Crucial: Use raw text for signature verification</p>
+<p>  const signature = req.headers.get(&#x27;stripe-signature&#x27;) as string;</p>
 
-<p>The final stage of evolution is using **Agentic Workflows** like **Aider** or **OpenDevin**. These are not just &quot;chatbots&quot;; they are CLI-driven agents that can execute terminal commands, read files, and apply edits.</p>
+<p>  try {</p>
+<p>    const event = stripe.webhooks.constructEvent(body, signature, process.env.STRIPE_WEBHOOK_SECRET!);</p>
 
-<h3>Implementation with Aider:</h3>
-<p>Aider allows yous to work on a &quot;Chat-with-your-code&quot; loop that manages git commits automatically.</p>
+<p>    if (event.type === &#x27;checkout.session.completed&#x27;) {</p>
+<p>      const session = event.data.object as Stripe.Checkout.Session;</p>
 
-<p>**Workflow Example:**</p>
-<p>1.  **Initialize:** `aider --model gpt-4o`</p>
-<p>2.  **Tasking:** `/add src/models.py src/services/order_service.py`</p>
-<p>3.  **Instruction:** &quot;Refactor the order service to use the new tax strategy pattern. Ensure you create a new file `src/strategies/tax_strategies.py` and update the imports.&quot;</p>
-<p>4.  **Execution:** Aider will analyze the files, write the code, run the `git commit` command, and present a diff.</p>
-
-<p>**The Agentic Command Pattern:**</p>
-<p>Use a shell script to chain Aider commands for repetitive tasks:</p>
-<p>```bash</p>
-<h1>Refactor all deprecated functions in a single command</h1>
-<p>aider --message &quot;Scan all files in src/ and replace deprecated call &#x27;old_api()&#x27; with &#x27;new_api_v2()&#x27;. Run pytest after every change.&quot;</p>
+<p>      // Use a transaction to ensure atomicity</p>
+<p>      await db.$transaction([</p>
+<p>        db.user.update({</p>
+<p>          where: { email: session.customer_details?.email! },</p>
+<p>          data: { subscriptionStatus: &#x27;active&#x27; }</p>
+<p>        }),</p>
+<p>        db.webhookEvent.create({</p>
+<p>          data: { eventId: event.id, type: event.type }</p>
+<p>        })</p>
+<p>      ]);</p>
+<p>    }</p>
+<p>    return NextResponse.json({ received: true });</p>
+<p>  } catch (err) {</p>
+<p>    return NextResponse.json({ error: &#x27;Webhook Error&#x27; }, { status: 400 });</p>
+<p>  }</p>
+<p>}</p>
 <p>```</p>
 
 <p>---</p>
 
-<h2>Building Custom GPTs for Domain-Specific Code Standards</h2>
+<h2>Common Mistakes: The &quot;AI Trap&quot; List</h2>
 
-<p>Generic LLMs do not know your company&#x27;s specific &quot;Internal Standard for Error Handling.&quot; To solve this, you must build a **Domain-Specific Coding Agent**.</p>
+<p>1. **The &quot;Hallucinated Library&quot; Trap:** AI often suggests libraries that don&#x27;t exist or use outdated syntax (e.g., using `axios` when your project uses `fetch`).</p>
+<p>   - *Fix:* Always include a &quot;Tech Stack&quot; block in your prompt.</p>
+<p>2. **The &quot;Logic Drift&quot; Trap:** When coding a large file, the AI forgets the variable names defined at the top of the file.</p>
+<p>   - *Fix:* Use the `@file` symbol in Cursor to force the AI to re-read the original file before generating new code.</p>
+<p>3. **The &quot;Security Blindness&quot; Trap:** AI will often suggest code that skips authentication or validation to &quot;make the code work.&quot;</p>
+<p>   - *Fix:* Add a &quot;Security Constraint&quot; to your `.cursorrules`: *&quot;Never suggest code that bypasses middleware or authentication checks.&quot;*</p>
+<p>4. **The &quot;Infinite Loop&quot; Prompting:** Repeatedly asking &quot;Why doesn&#x27;t this work?&quot; without providing more context.</p>
+<p>   - *Fix:* If the AI fails twice, stop prompting. Manually find the error, and provide the error as a **Fact** in the next prompt.</p>
 
-<h3>The Configuration Blueprint:</h3>
-<p>Create a `custom_instructions.md` file and use it as the &quot;Knowledge Base&quot; for your Custom GPT or Claude Project.</p>
+<p>---</p>
 
-<p>**Your Knowledge Base should contain:**</p>
-<p>*   **The &quot;Definition of Done&quot;:** (e.g., &quot;All new functions must have type hints and a Google-style docstring.&quot;)</p>
-<p>*   **The &quot;Forbidden Patterns&quot;:** (e.g., &quot;Never use `os.path`; always use `pathlib`.&quot;)</p>
-<p>*   **The &quot;Architecture Map&quot;:** A high-level description of how modules interact (e.g., &quot;The `Services` layer must never call the `Controllers` layer; it can only call `Repositories` or `External APIs`.&quot;)</p>
+<h2>The Professional Developer&#x27;s Checklist</h2>
 
-<p>By injecting these standards into the LLM&#x27;s core identity, you transform the AI from a generic coder into a **Senior Staff Engineer** who understands your specific codebase&#x27;s DNA.</p></main></body></html>
+<p>Before you hit &quot;Commit,&quot; run through this checklist for every AI-generated PR:</p>
+
+<li>[ ] **Context Check:** Did I use `@file` or `@folder` to ensure the AI saw the relevant interfaces?</li>
+<li>[ ] **Pattern Match:** Does the new code follow the existing folder structure and naming conventions?</li>
+<li>[ ] **Type Safety:** Did I check for any `any` types the AI might have introduced to &quot;simplify&quot; the code?</li>
+<li>[ ] **Error Handling:** Does the code include `try/catch` blocks and use our project&#x27;s specific `AppError` class?</li>
+<li>[ ] **Dependency Audit:** Did the AI suggest a new `npm install`? If so, did I verify it is actually needed?</li>
+<li>  [ ] **Test Coverage:** Did I prompt the AI to generate a `.spec.ts` file for this specific change?</li>
+<li>[ ] **Security Check:** Is the Stripe/Auth/Database logic using the raw, unparsed input (where necessary) for signature verification?</li></main></body></html>
 </body></html>

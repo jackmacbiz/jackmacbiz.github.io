@@ -1,4 +1,4 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — The AI-Augmented Engineer: Prompt Engineering & Workflow Architect</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>The AI-Augmented Engineer: Prompt Engineering & Workflow Architect</h1><p>Master the art of generating production-ready, bug-free code by transforming LLMs from simple chat interfaces into autonomous coding agents.</p><div class=dl><a href='/downloads/ai-tool-for-coding.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — The AI-Augmented Engineer: Prompt Engineering & Workflow Mastery for Rapid Development</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>The AI-Augmented Engineer: Prompt Engineering & Workflow Mastery for Rapid Development</h1><p>Reduce your coding time by 60% by mastering advanced LLM prompting patterns and automated testing workflows.</p><div class=dl><a href='/downloads/ai-tool-for-coding.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -14,220 +14,243 @@
     li { margin: 7px 0; }
   </style>
 </head>
-<body><main><h1>The AI-Augmented Engineer: Prompt Engineering &amp; Workflow Architect</h1>
+<body><main><h1>The AI-Augmented Engineer: Prompt Engineering &amp; Workflow Mastery</h1>
 
-<h2>Introduction</h2>
-<p>The era of &quot;Chatting with GPT&quot; is over. For the professional software engineer, treating an LLM as a simple search interface is a waste of potential. To achieve a 10x increase in sprint velocity, you must transition from a *user* to an *architect*. This guide provides the technical framework to transform LLMs into autonomous agents capable of navigating complex codebases, executing multi-step refactors, and maintaining high-integrity CI/CD pipelines.</p>
+<h2>1. The LLM-Developer Mental Model: Moving from Autocomplete to Architect</h2>
 
-<p>---</p>
+<p>To achieve a 60% reduction in development time, you must stop treating LLMs as &quot;smar/er Google&quot; and start treating them as **Junior Engineers with Infinite Context but Zero Intent.**</p>
 
-<h2>1. The LLM Mental Model: Understanding Tokenization and Context Windows</h2>
+<p>The &quot;Autocomplete&quot; mindset fails because it focuses on the *syntax* of the next line. The &quot;Architect&quot; mindset focuses on the *specification* of the system. An Architect defines the constraints, the interface, and the invariants before a single line of code is generated.</p>
 
-<p>To command an LLM, you must understand its physical constraints. An LLM does not &quot;read&quot; code; it processes tokens.</p>
-
-<h3>The Tokenization Trap</h3>
-<p>Code is dense with syntax—brackets, indentation, and special characters. Standard tokenizers (like Tiktoken) often split single meaningful symbols (e.g., `&gt;&gt;=` or `async/await`) into multiple tokens. This consumes your context window rapidly. When your prompt becomes &quot;token-heavy,&quot; the model loses the ability to maintain long-range dependencies, leading to &quot;hallucinated&quot; syntax.</p>
-
-<h3>Beyond Skeleton Prompting: AST-Based Context Management</h3>
-<p>The biggest bottleneck in AI coding is the **Context Window Limit**. You cannot paste a 50,000-line repository into a prompt. &quot;Skeleton Prompting&quot; (providing only function signatures) is insufficient for complex logic.</p>
-
-<p>Instead, implement **AST-based (Abstract Syntax Tree) Pruning**. Before sending code to the LLM, use a script to parse your codebase into an AST. Extract only the relevant nodes:</p>
-<p>1.  **Class Definitions and Method Signatures.**</p>
-<p>2.  **Type Definitions (TypeScript/Python Type Hints).**</p>
-<p>3.  **Inter-module dependencies (Imports).**</p>
-
-<p>By feeding the LLM an AST-derived map rather than raw text, you provide a high-density &quot;map&quot; of the logic, allowing the model to understand the relationship between `UserService.ts` and `AuthMiddleware.ts` without wasting tokens on the implementation details of every helper function.</p>
+<h3>The Three Pillars of the Architect Model:</h3>
+<p>1.  **The Specification-First Principle:** Never ask for code directly. Ask for a technical design document (TDD) first. Validate the logic in Markdown before allowing the LLM to touch the `.py` or `.ts` files.</p>
+<p>2.  **The Invariant Enforcement:** You must define what the code *must not* do. Hallucinations occur when the LLM explores the &quot;possibility space&quot; too broadly. By defining invariants (e.g., &quot;The function must never execute a database write if the `auth_token` is expired&quot;), you prune the search space.</p>
+<p>3.  **The Interface Contract:** Use Type Definitions as the &quot;Source of Truth.&quot; If you provide a robust TypeScript Interface or a Pydantic Model, the LLM’s ability to hallucinate logic is physically constrained by the types you&#x27;ve provided.</p>
 
 <p>---</p>
 
-<h2>2. Advanced Prompt Engineering for Complex Logic and Refactoring</h2>
+<h2>2. Advanced Prompting Patterns: The &quot;Mega-Prompt&quot; Blueprint</h2>
 
-<p>Moving beyond &quot;Chain of Thought&quot; (CoT), professional engineers use **Structured Output Enforcement** and **Schema-Driven Prompting**.</p>
+<p>Generic prompts like &quot;Write a function to handle stripe webhooks&quot; result in generic, unmaintainable code. You need **Structured Mega-Prompts** that utilize XML delimiters and Chain-of-Thought (CoT) constraints.</p>
 
-<h3>The Tool Definition Pattern</h3>
-<p>When instructing an LLM to perform a task (e.g., &quot;Refactor this function&quot;), do not use natural language instructions alone. Use a JSON schema to define the expected output. This allows you to parse the LLM&#x27;s response programmatically.</p>
+<h3>The &quot;Logic Architect&quot; Mega-Prompt Template</h3>
+<p>Use this template when initiating a new complex feature. Copy and paste this structure, replacing the bracketed text.</p>
 
-<p>**Example: Tool Definition for a Refactoring Agent**</p>
-<p>If you are building an agent to automate refactors, define its capabilities using a JSON schema for function calling:</p>
+<p>```markdown</p>
+<h3>SYSTEM INSTRUCTION</h3>
+<p>You are a Senior Staff Engineer specializing in [Language, e.g., Rust/TypeScript].</p>
+<p>Your goal is to design a production-ready implementation of [Feature Name].</p>
+<p>You must adhere to the principles of Clean Architecture and SOLID.</p>
 
-<p>```json</p>
-<p>{</p>
-<p>  &quot;name&quot;: &quot;apply_refactor&quot;,</p>
-<p>  &quot;description&quot;: &quot;Applies a structural change to a specific file in the repository.&quot;,</p>
-<p>  &quot;parameters&quot;: {</p>
-<p>    &quot;type&quot;: &quot;object&quot;,</p>
-<p>    &quot;properties&quot;: {</p>
-<p>      &quot;file_path&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;The relative path to the file.&quot; },</p>
-<p>      &quot;search_string&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;The exact code block to replace.&quot; },</p>
-<p>      &quot;replacement_string&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;The new, refactored code block.&quot; },</p>
-<p>      &quot;rationale&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;Engineering justification for the change.&quot; }</p>
-<p>    },</p>
-<p>    &quot;required&quot;: [&quot;file_path&quot;, &quot;search_string&quot;, &quot;replacement_string&quot;]</p>
-<p>  }</p>
-<p>}</p>
+<h3>CONSTRAINTS</h3>
+<p>&lt;constraints&gt;</p>
+<li>No external dependencies outside of [List allowed libs, e.g., Zod, Prisma].</li>
+<li>Error handling must use the [Result Pattern/Try-Catch] approach.</li>
+<li>Complexity must not exceed O(n log n).</li>
+<li>All functions must be documented with JSDoc/Docstrings.</li>
+<p>&lt;/constraints&gt;</p>
+
+<h3>CONTEXT &amp; SCHEMA</h3>
+<p>&lt;schema&gt;</p>
+<p>[Paste your Database Schema or Interface Definitions here]</p>
+<p>&lt;/schema&gt;</p>
+
+<h3>EXECUTION STEPS (Chain-of-Thought)</h3>
+<p>Before writing any implementation code, you must follow these steps:</p>
+<p>1. &lt;analysis&gt; Analyze the edge cases of the provided schema.</p>
+<p>2. &lt;pseudo_code&gt; Write a high-level algorithmic breakdown of the logic.</p>
+<p>3. &lt;interface_definition&gt; Define the TypeScript interfaces/Pydantic models.</p>
+<p>4. &lt;implementation&gt; Only after completing the above, provide the implementation.</p>
+<p>&lt;/analysis&gt;</p>
+
+<h3>OUTPUT FORMAT</h3>
+<p>Return your response in the following XML structure:</p>
+<p>&lt;plan&gt; [Your detailed architectural plan] &lt;/plan&gt;</p>
+<p>&lt;interfaces&gt; [The code for types/interfaces] &lt;/interfaces&gt;</p>
+<p>&lt;code&gt; [The actual implementation] &lt;/code&gt;</p>
 <p>```</p>
 
-<h3>The &quot;Logic-First&quot; Prompting Pattern</h3>
-<p>For complex refactoring, use **Iterative Specification**.</p>
-<p>1.  **Step 1: The Specification Prompt.** &quot;Analyze this function and write a formal specification of its side effects and edge cases in Markdown.&quot;</p>
-<p>2.  **Step 2: The Implementation Prompt.** &quot;Given the specification generated in Step 1, rewrite the function using the following pattern: [Template].&quot;</p>
+<p>**Why this works:** The `&lt;analysis&gt;` and `&lt;pseudo_code&gt;` tags force the LLM to use its &quot;internal monologue&quot; (CoT) to process the logic before it commits to a specific syntax. This significantly reduces logical errors in the final `&lt;code&gt;` block.</p>
 
 <p>---</p>
 
-<h2>3. Architecting Multi-Step Coding Workflows with Agentic Frameworks</h2>
+<h2>3. Context Window Management: The &quot;Context Pruning&quot; Strategy</h2>
 
-<p>An &quot;Agentic Workflow&quot; moves away from a single prompt to a loop of **Plan $\rightarrow$ Execute $\rightarrow$ Verify**.</p>
+<p>The biggest killer of AI productivity is &quot;Context Dilution&quot;—feeding too much irrelevant code, causing the LLM to lose focus on the core logic.</p>
 
-<h3>The Agentic Loop Architecture</h3>
-<p>To implement this, you need a controller (a Python script or a tool like LangGraph) that manages the state.</p>
-<li>**Planner Agent:** Analyzes the requirement and generates a `todo.md` file.</li>
-<li>**Coder Agent:** Reads `todo.md`, reads the codebase (via AST map), and applies changes.</li>
-<li>**Reviewer Agent:** Runs the code against linter/test suites and compares the output against the `todo.md`.</li>
+<h3>The `.cursorrules` Implementation for Context Pruning</h3>
+<p>If you use Cursor or any AI-integrated IDE, do not rely on the default indexing. You must implement a `.cursorrules` file in your root directory to act as a &quot;Context Firewall.&quot;</p>
 
-<p>If the Reviewer Agent detects a failure, it feeds the error log back to the Coder Agent. This loop continues until the `todo.md` is marked as complete.</p>
+<p>**Create a `.cursorrules` file with this configuration:**</p>
 
-<p>---</p>
+<p>```markdown</p>
+<h1>AI Context Management Rules</h1>
 
-<h2>4. Automated Unit Test Generation and Edge Case Discovery</h2>
+<h2>Codebase Scope</h2>
+<li>ONLY reference files within the `/src/modules/` directory.</li>
+<li>IGNORE all files in `/dist`, `/build`, or `/legacy`.</li>
+<li>When asked to refactor, always check `types.ts` first to ensure interface compliance.</li>
 
-<p>The value of an AI agent is not in writing code, but in writing *tests*. Use the LLM to perform **Boundary Value Analysis**.</p>
+<h2>Context Pruning Strategy</h2>
+<li>If a file exceeds 300 lines, do not read the whole file. Instead, ask me to provide the specific function signatures.</li>
+<li>Always prioritize the `README.md` in the current module for business logic context.</li>
 
-<p>**The Prompting Strategy:**</p>
-<p>Don&#x27;t ask: &quot;Write tests for this function.&quot;</p>
-<p>Ask: &quot;Analyze the following function for potential integer overflows, null pointer exceptions, and concurrency issues. Generate a PyTest suite that specifically targets these edge cases using `pytest.mark.parametrize`.&quot;</p>
+<h2>Coding Standards</h2>
+<li>Use Functional Programming patterns (immutability).</li>
+<li>Prefer Composition over Inheritance.</li>
+<li>Use Zod for all runtime validation.</li>
+<p>```</p>
 
-<p>By forcing the LLM to first *identify* the edge cases, you prevent it from generating &quot;happy path&quot; tests that provide a false sense of security.</p>
-
-<p>---</p>
-
-<h2>5. The Debugging Loop: Using AI to Trace and Regression Errors</h2>
-
-<p>When a regression occurs, do not paste the error. Paste the **Execution Trace**.</p>
-
-<p>**The Trace-Driven Debugging Workflow:**</p>
-<p>1.  **Capture:** Extract the stack trace and the local variable state at the time of failure.</p>
-<p>2.  **Contextualize:** Provide the LLM with the specific file and the AST-pruned map of the calling functions.</p>
-<p>3.  **Hypothesize:** Ask the LLM to generate three distinct hypotheses for the failure.</p>
-<p>4.  **Verify:** Use a script to inject &quot;Probe Prints&quot; or logging into the code to test each hypothesis.</p>
+<p>**The Strategy:** By explicitly telling the AI which files to *ignore*, you preserve the &quot;Attention Head&quot; weight for the files that actually matter, preventing the &quot;lost in the middle&quot; phenomenon common in long context windows.</p>
 
 <p>---</p>
 
-<h2>6. Integrating AI into CI/CD Pipelines for Automated Code Reviews</h2>
+<h2>4. Case Study: The &quot;Architect Model&quot; in Action</h2>
 
-<p>Automate the &quot;First Pass&quot; of code reviews using GitHub Actions. This ensures that by the time a human engineer sees a PR, all stylistic and basic logical errors have been addressed.</p>
+<p>**The Legacy Mess (50 lines of unmaintainable Python):**</p>
+<p>A monolithic function that parses a CSV, performs complex calculations, interacts with a global database connection, and handles errors via print statements.</p>
 
-<p>**Sample GitHub Action: `ai-code-reviewer.yml`**</p>
-<p>This workflow triggers on every Pull Request, sends the diff to an LLM, and posts the feedback as a PR comment.</p>
+<p>**The Transformation Workflow:**</p>
 
+<p>1.  **Step 1: The Extraction Prompt.**</p>
+<p>    *   *Prompt:* &quot;Analyze the following function. Extract the business logic from the I/O operations and identify the hidden side effects.&quot;</p>
+<p>    *   *Result:* The AI identifies that the `db_connection` is a global singleton (a violation of testability).</p>
+<p>2.  **Step 2: The Interface Definition.**</p>
+<p>    *   *Prompt:* &quot;Using the Mega-Prompt pattern, define a Pydantic schema for the CSV input and a Repository Interface for the database operations.&quot;</p>
+<p>    *   *Result:* The AI generates a `CSVRow` model and an `AbstractRepository` class.</p>
+<p>3.  **Step 3: The Refactor.**</p>
+<p>    *   *Prompt:* &quot;Rewrite the function using the Repository Pattern. Inject the dependency via the constructor. Ensure all errors are caught and wrapped in a `ServiceError` exception.&quot;</p>
+<p>    *   *Result:* A clean, testable, and decoupled service.</p>
+
+<p>---</p>
+
+<h2>5. Automated Unit Test Generation: Achieving 90%+ Coverage</h2>
+
+<p>To achieve high coverage without manual effort, you must move from &quot;Write tests for this&quot; to &quot;Generate a Test Suite based on the Invariants.&quot;</p>
+
+<h3>The &quot;Invariant-Driven&quot; Test Prompt</h3>
+<p>```markdown</p>
+<p>&lt;instruction&gt;</p>
+<p>Review the provided code.</p>
+<p>1. Identify all possible failure modes (e.g., Null inputs, Type mismatches, Boundary conditions).</p>
+<p>2. Generate a Pytest suite using `pytest-mock`.</p>
+<p>3. Every test must follow the AAA (Arrange, Act, Assert) pattern.</p>
+<p>4. Target 100% branch coverage for the following logic: [Insert Logic Snippet]</p>
+<p>&lt;/instruction&gt;</p>
+<p>```</p>
+
+<p>**Pro-Tip:** Use the AI to generate the **Test Data Factory** first. Ask the AI to create a `conftest.py` that uses `factory_boy` to generate complex, valid, and invalid object states. This ensures your tests are testing real-world complexity, not just &quot;happy paths.&quot;</p>
+
+<p>---</p>
+
+<h2>6. The AI-Driven Refactoring Loop: Identifying Technical Debt</h2>
+
+<p>Don&#x27;t wait for a sprint to refactor. Use a **&quot;Refactor-on-Commit&quot;** loop.</p>
+
+<p>1.  **Detection:** Use a script (see Section 7) to scan diffs for &quot;Complexity Smells&quot; (high cyclomatic complexity).</p>
+<p>2.  **Proposal:** Feed the &quot;Smelly&quot; code into the LLM with the instruction: *&quot;Identify the technical debt in this diff and provide a refactored version that reduces cyclomatic complexity by at least 30%.&quot;*</p>
+<p>3.  **Validation:** Run the newly generated tests (from Section 5) against the refactored code. If they pass, the debt is cleared.</p>
+
+<p>---</p>
+
+<h2>7. Integrating AI Agents into your CI/CD Pipeline</h2>
+
+<p>The ultimate mastery is automating the **Automated PR Reviewer**. You can implement this using a GitHub Action that triggers on every Pull Request.</p>
+
+<h3>The Automated PR Reviewer (Python + OpenAI API)</h3>
+
+<p>**`scripts/ai_review.py`**</p>
+<p>```python</p>
+<p>import os</p>
+<p>import openai</p>
+<p>import subprocess</p>
+
+<p>def get_git_diff():</p>
+<p>    # Fetches the changes between the PR branch and main</p>
+<p>    return subprocess.check_output([&#x27;git&#x27;, &#x27;diff&#x27;, &#x27;origin/main...HEAD&#x27;]).decode(&#x27;utf-utf8&#x27;)</p>
+
+<p>def review_code(diff):</p>
+<p>    client = openai.OpenAI(api_key=os.getenv(&quot;OPENAI_API_KEY&quot;))</p>
+
+<p>    prompt = f&quot;&quot;&quot;</p>
+<p>    You are an expert Code Reviewer. Analyze the following git diff for:</p>
+<p>    1. Logical errors or potential bugs.</p>
+<p>    2. Security vulnerabilities (SQLi, XSS, etc.).</p>
+<p>    3. Violations of Clean Code principles.</p>
+
+<p>    DIFF:</p>
+<p>    {diff}</p>
+
+<p>    Format your response as a list of comments. If no issues are found, reply &#x27;LGTM&#x27;.</p>
+<p>    &quot;&quot;&quot;</p>
+
+<p>    response = client.chat.completions.create(</p>
+<p>        model=&quot;gpt-4-turbo&quot;,</p>
+<p>        messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt}]</p>
+<p>    )</p>
+<p>    return response.choices[0].message.content</p>
+
+<p>if __name__ == &quot;__main__&quot;:</p>
+<p>    diff = get_git_diff()</p>
+<p>    if diff:</p>
+<p>        review_result = review_code(diff)</p>
+<p>        print(f&quot;### AI Code Review Report\n{review_result}&quot;)</p>
+<p>        # In a real CI, you would use the GitHub API to post this as a comment</p>
+<p>```</p>
+
+<p>**`.github/workflows/ai-review.yml`**</p>
 <p>```yaml</p>
-<p>name: AI Code Reviewer</p>
-
+<p>name: AI Code Review</p>
 <p>on:</p>
 <p>  pull_request:</p>
-<p>    branches: [ main ]</p>
+<p>    types: [opened, synchronize]</p>
 
 <p>jobs:</p>
 <p>  review:</p>
 <p>    runs-on: ubuntu-latest</p>
 <p>    steps:</p>
-<p>      - name: Checkout Code</p>
-<p>        uses: actions/checkout@v3</p>
+<p>      - uses: actions/checkout@v3</p>
 <p>        with:</p>
 <p>          fetch-depth: 0</p>
-
-<p>      - name: Get PR Diff</p>
-<p>        id: diff</p>
-<p>        run: |</p>
-<p>          git diff origin/${{ github.base_ref }}...origin/${{ github.head_ref }} &gt; pr_diff.txt</p>
-
+<p>      - name: Set up Python</p>
+<p>        uses: actions/setup-python@v4</p>
+<p>        with:</p>
+<p>          python-version: &#x27;3.10&#x27;</p>
+<p>      - name: Install dependencies</p>
+<p>        run: pip install openai</p>
 <p>      - name: Run AI Review</p>
 <p>        env:</p>
 <p>          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}</p>
-<p>        run: |</p>
-<p>          # This script calls a local Python utility that parses pr_diff.txt</p>
-<p>          # and uses the OpenAI API to generate a summary.</p>
-<p>          python scripts/ai_reviewer.py pr_diff.txt</p>
-
-<p>      - name: Post Comment</p>
-<p>        uses: thollander/actions-comment-pull-request@v2</p>
-<p>        with:</p>
-<p>          message: |</p>
-<p>            ## 🤖 AI Code Review Summary</p>
-<p>            $(cat review_summary.txt)</p>
+<p>        run: python scripts/ai_review.py</p>
 <p>```</p>
 
 <p>---</p>
 
-<h2>7. Security and Privacy: Sanitizing Prompts and Protecting Proprietary Logic</h2>
+<h2>8. Security &amp; Privacy: Sanitizing Prompts to Prevent Data Leaks</h2>
 
-<p>Sending raw source code to a third-party LLM is a massive security risk. You must implement an **Anonymization Layer**.</p>
+<p>The &quot;Engineer&quot; becomes a &quot;Liability&quot; if they leak PII (Personally Identifiable Information) or proprietary secrets into an LLM.</p>
 
-<p>**The Python Anonymization Layer**</p>
-<p>Use a regex-based pre-processor to strip sensitive identifiers (API keys, internal IP addresses, and proprietary project names) before the code leaves your local environment.</p>
+<h3>The Sanitization Protocol</h3>
+<p>1.  **The Tokenization Rule:** Never paste raw API keys, database connection strings, or customer names. Use placeholders like `{{API_KEY}}` or `{{USER_ID}}`.</p>
+<p>2.  **The Structural Proxy:** Instead of providing the actual data, provide the **Schema**. The LLM does not need to see `John Doe, 123 Main St`; it only needs to see `name: string, address: string`.</p>
+<p>3.  **Automated Pre-flight Check:** Before sending a prompt to an LLM via script, run a RegEx-based sanitizer:</p>
 
 <p>```python</p>
 <p>import re</p>
 
-<p>def sanitize_code(code_snippet):</p>
-<p>    # Pattern 1: Remove potential API Keys/Secrets</p>
-<p>    secret_pattern = r&#x27;(?i)(api_key|password|secret|token)\s*=\s*[&quot;\&#x27;][^&quot;\&#x27;]+[&quot;\&#x27;]&#x27;</p>
+<p>def sanitize_prompt(prompt):</p>
+<p>    # Patterns for API Keys, Emails, and IPv4 addresses</p>
+<p>    patterns = [</p>
+<p>        (r&#x27;[a-zA-Z0-9]{32,}&#x27;, &#x27;[REDACTED_KEY]&#x27;), # Generic long hex keys</p>
+<p>        (r&#x27;[\w\.-]+@[\w\.-]+\.\w+&#x27;, &#x27;[REDACTED_EMAIL]&#x27;),</p>
+<p>        (r&#x27;\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}&#x27;, &#x27;[REDACTED_IP]&#x27;)</p>
+<p>    ]</p>
 
-<p>    # Pattern 2: Remove internal IP addresses</p>
-<p>    ip_pattern = r&#x27;\b(?:\d{1,3}\.){3}\d{1,3}\b&#x27;</p>
-
-<p>    # Pattern 3: Replace proprietary function names (Example: &#x27;ProjectX_Internal_Auth&#x27;)</p>
-<p>    proprietary_pattern = r&#x27;ProjectX_[a-zA-Z0-9_]+&#x27;</p>
-
-<p>    sanitized = re.sub(secret_pattern, r&#x27;\1 = &quot;[REDACTED]&quot;&#x27;, code_snippet)</p>
-<p>    sanitized = re.sub(ip_pattern, &#x27;[INTERNAL_IP]&#x27;, sanitized)</p>
-<p>    sanitized = re.sub(proprietary_pattern, &#x27;InternalAuthFunction&#x27;, sanitized)</p>
-
+<p>    sanitized = prompt</p>
+<p>    for pattern, replacement in patterns:</p>
+<p>        sanitized = re.sub(pattern, replacement, sanitized)</p>
 <p>    return sanitized</p>
-
-<h1>Usage</h1>
-<p>raw_code = &#x27;api_key = &quot;sk-12345abcde&quot;; connect_to(&quot;192.168.1.50&quot;); ProjectX_Verify_User();&#x27;</p>
-<p>print(sanitize_code(raw_code))</p>
-<h1>Output: api_key = &quot;[REDACTED]&quot;; connect_to(&quot;[INTERNAL_IP]&quot;); InternalAuthFunction();</h1>
 <p>```</p>
 
-<p>---</p>
-
-<h2>8. Building Custom GPTs and System Instructions for Specific Tech Stacks</h2>
-
-<p>To minimize &quot;hallucination,&quot; you must define a **System Prompt** that acts as a strict compiler specification.</p>
-
-<p>**Template for a TypeScript/Node.js System Instruction:**</p>
-<p>&gt; &quot;You are an expert Senior Staff Engineer specializing in TypeScript and Node.js.</p>
-<p>&gt;</p>
-<p>&gt; **Strict Constraints:**</p>
-<p>&gt; 1. **Type Safety:** Never use `any`. Always define interfaces for all function parameters.</p>
-<p>&gt; 2. **Error Handling:** Every asynchronous call must be wrapped in a `try/catch` block with specific error logging.</p>
-<p>&gt; 3. **Pattern Adherence:** Use the Repository Pattern for all database interactions.</p>
-<p>&gt; 4. **Output Format:** Return only valid TypeScript code. Do not include conversational preamble.</p>
-<p>&gt;</p>
-<p>&gt; **Contextual Knowledge:**</p>
-<p>&gt; You are working within a Monorepo structure. All imports must use the `@workspace/` alias.&quot;</p>
-
-<p>By embedding these constraints into the **System Message**, you reduce the need for repetitive prompting and ensure the LLM&#x27;s output is architecturally consistent with your existing codebase.</p>
-
-<p>---</p>
-
-<h2>Case Study: The &quot;Plan-Execute-Verify&quot; Refactor</h2>
-<p>**Scenario:** Migrating a legacy REST endpoint (`GET /user/:id`) to a GraphQL resolver.</p>
-
-<h3>Phase 1: The Plan</h3>
-<p>The engineer provides the `userController.ts` and the `schema.graphql` to the Agent.</p>
-<p>**Agent Output (`plan.md`):**</p>
-<p>1. Modify `userResolver.ts` to include `getUser` query.</p>
-<p>2. Update `userController.ts` to remove the Express route handler.</p>
-<p>3. Update `userSchema.prisma` to ensure the field mapping is correct.</p>
-
-<h3>Phase 2: The Execution</h3>
-<p>The Agent processes the files one by one. Using the **Tool Definition Pattern** (from Section 2), it applies the `apply_refactor` function to each file, replacing the Express logic with the Apollo Server resolver logic.</p>
-
-<h3>Phase 3: The Verification</h3>
-<p>The Agent triggers a `npm test`.</p>
-<li>**Failure:** The test fails because a field named `user_id` was renamed to `id` in the Prisma schema.</li>
-<li>**Loop:** The Agent reads the error, identifies the mismatch in `userResolver.ts`, and re-executes the refactor with the correct field name.</li>
-<li>**Success:** The tests pass, and the PR is ready for human approval.</li></main></body></html>
+<p>**Mastery Summary:** You are no longer writing code; you are managing a pipeline of **Specifications $\rightarrow$ Logic $\rightarrow$ Implementation $\rightarrow$ Verification.** By controlling the context, the prompt structure, and the automation loop, you achieve a level of velocity that traditional developers cannot match.</p></main></body></html>
 </body></html>

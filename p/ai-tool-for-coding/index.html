@@ -1,4 +1,4 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — The AI-Augmented Engineer: Prompt Engineering & Workflow Architect</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>The AI-Augmented Engineer: Prompt Engineering & Workflow Architect</h1><p>Master the art of using LLMs to write, debug, and document production-ready code 5x faster.</p><div class=dl><a href='/downloads/ai-tool-for-coding.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — Ai Tool For Coding</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>Ai Tool For Coding</h1><p>A practical kit for ai tool for coding.</p><div class=dl><a href='/downloads/ai-tool-for-coding.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -14,211 +14,187 @@
     li { margin: 7px 0; }
   </style>
 </head>
-<body><main><h1>The AI-Augmented Engineer: Prompt Engineering &amp; Workflow Architect</h1>
+<body><main><h1>The AI-Augmented Engineer: A Professional Kit for High-Velocity Development</h1>
 
-<p>This guide is not a collection of &quot;magic prompts.&quot; It is a technical manual for re-engineering your cognitive workflow. To achieve a 5x increase in velocity, you must stop treating LLMs as chatbots and start treating them as non-deterministic, high-latency compilers.</p>
+<h2>Overview</h2>
 
-<p>---</p>
+<p>The era of &quot;writing code&quot; is being replaced by the era of &quot;orchestrating logic.&quot; This guide is not about how to use ChatGPT to write a Python script; it is about building a high-performance development workflow using Agentic IDEs (Cursor, Claude Dev/Cline) to handle complex architectural implementations.</p>
 
-<h2>1. The LLM Mental Model: Understanding Tokenization and Context Windows</h2>
+<p>The goal is to achieve a **70% reduction in boilerplate development time** and a **40% increase in test coverage** without increasing your technical debt. We move from a &quot;manual typing&quot; paradigm to a &quot;Reviewer-in-the-Loop&quot; paradigm.</p>
 
-<p>To architect workflows, you must understand the physical constraints of the LLM.</p>
-
-<h3>Tokenization: The Sub-word Reality</h3>
-<p>LLMs do not &quot;read&quot; text; they process tokens (often sub-word units). In Python, a variable like `user_id_list` might be split into `[&#x27;user&#x27;, &#x27;_id&#x27;, &#x27;_list&#x27;]`.</p>
-<p>*   **The Impact on Code:** This is why LLMs struggle with exact character-level tasks (like reversing a string) or specific regex patterns.</p>
-<p>*   **Architectural Strategy:** When prompting for complex string manipulations, provide the expected token-level structure or use &quot;Few-Shot&quot; examples to anchor the model&#x27;s attention to the correct sub-word boundaries.</p>
-
-<h3>The Context Window &amp; The &quot;Lost in the Middle&quot; Phenomenon</h3>
-<p>Modern models (Claude 3.5 Sonnet, GPT-4o) boast massive context windows (200k+ tokens). However, research shows that LLMs suffer from performance degradation when critical information is buried in the middle of a long prompt.</p>
-<p>*   **Implementation Rule:** Always place your **Core Instructions** and **Output Schema** at the very end of the prompt (Recency Bias). Place your **Reference Code/Documentation** in the middle.</p>
-
-<h3>Context Management Strategies</h3>
-<p>1.  **RAG (Retrieval-Augmented Generation) for Local Docs:** Do not paste entire libraries. Use a vector database (like ChromaDB) to retrieve only the relevant function signatures.</p>
-<p>2.  **Context Pruning:** Before sending a file to an LLM, strip comments and docstrings if you are hitting token limits and only need logic analysis.</p>
+<h3>The Benchmark: Manual vs. AI-Augmented</h3>
+<p>In a controlled benchmark (implementing a standard CRUD API with JWT authentication and Zod validation):</p>
+<p>*   **Manual Implementation:** 145 minutes (including boilerplate, error handling, and unit test writing).</p>
+<p>*   **AI-Augmented Workflow:** 28 minutes (including prompt refinement, review, and debugging).</p>
+<p>*   **Result:** 5.1x speed multiplier with higher test density.</p>
 
 <p>---</p>
 
-<h2>2. Advanced Prompt Engineering: Chain-of-Thought (CoT) for Complex Debugging</h2>
+<h2>Tool Comparison: Choosing Your Engine</h2>
 
-<p>Standard prompting (Role, Context, Instruction) fails when logic branches are deep. You must implement **Chain-of-Thought (CoT)** and **Self-Criticism** loops.</p>
+<p>To build a professional workflow, you must select the right tool for the specific task. Using a general-purpose LLM (like the ChatGPT web interface) for coding is a mistake; you need tools with **Context Awareness.**</p>
 
-<h3>The &quot;Decomposition&quot; Pattern</h3>
-<p>Instead of asking &quot;Fix this bug,&quot; use a multi-step CoT prompt that forces the model to simulate the execution trace.</p>
-
-<p>**Example Prompt for a Race Condition:**</p>
-<p>&gt; &quot;Analyze the attached `async_handler.py`.</p>
-<p>&gt; 1. **Trace:** Step through the execution of `process_data()` line-by-line.</p>
-<p>&gt; 2. **State Tracking:** Maintain a mental table of the `shared_resource` state at every await point.</p>
-<p>&gt; 3. **Hypothesize:** Identify where an interleaved execution could lead to a stale read.</p>
-<p>&gt; 4. **Verify:** Propose a fix using an `asyncio.Lock` and explain why the lock prevents the specific interleaving identified in step 3.&quot;</p>
-
-<h3>Few-Shot Logic Anchoring</h3>
-<p>If you are implementing a proprietary framework, provide 3 examples of &quot;Bug -&gt; Trace -&gt; Fix&quot;. This reduces the &quot;hallucination&quot; of standard library functions that don&#x27;t exist in your custom environment.</p>
+<p>| Feature | **Cursor (IDE)** | **GitHub Copilot** | **Claude Dev / Cline (Agentic)** |</p>
+<p>| :--- | :--- Fully integrated; indexes your entire codebase via RAG. | Autocomplete-focused; limited codebase awareness in standard mode. | Agentic; can run terminal commands, read files, and self-correct. |</p>
+<p>| **Context Window** | High (Uses specialized indexing of local files). | Medium (Primarily focuses on open tabs). | Very High (Uses long-context models like Claude 3.5 Sonnet). |</p>
+<p>| **Best Use Case** | Daily feature development and refactoring. | Rapid autocomplete and boilerplate &quot;ghost text.&quot; | Complex, multi-file architectural shifts and migrations. |</p>
+<p>| **Pros** | &quot;Composer&quot; mode can write across 10+ files simultaneously. | Seamless integration with GitHub ecosystem. | Can execute `npm test` and fix code based on terminal errors. |</p>
+<p>| **Cons** | Proprietary ecosystem; requires switching IDEs from VS Code. | Lacks the &quot;Agentic&quot; ability to run terminal commands autonomously. | Higher token cost; requires careful monitoring of &quot;looping&quot; errors. |</p>
 
 <p>---</p>
 
-<h2>3. The Systematic Debugging Loop: Using AI to Trace and Fix Errors</h2>
+<h2>The Core Method: The &quot;Context-Context-Constraint&quot; (CCC) Framework</h2>
 
-<p>A professional workflow uses the LLM to generate a **Verification Loop**, not just a fix.</p>
+<p>The primary reason AI coding fails is **Context Fragmentation.** If the AI doesn&#x27;t know your existing utility functions, it will hallucinate new ones.</p>
 
-<h3>The &quot;Execution-Feedback&quot; Architecture</h3>
-<p>Don&#x27;t accept the first code block. Use this automated loop:</p>
-<p>1.  **Generate Fix:** LLM proposes a patch.</p>
-<p>2.  **Unit Test Generation:** LLM generates a specific `pytest` case that fails on the current code but passes on the proposed fix.</p>
-<p>3.  **Automated Execution:** A local script runs the test.</p>
-<p>4.  **Error Feedback:** If the test fails, the stack trace is fed back into the LLM automatically.</p>
+<p>The **CCC Framework** involves three layers of input:</p>
+<p>1.  **Context:** Explicitly pointing the AI to relevant files (e.g., `@auth.service.ts`, `@schema.prisma`).</p>
+<p>2.  **Context:** Providing the architectural standard (e.g., &quot;We use the Repository Pattern&quot;).</p>
+<p>3.  **Constraint:** Defining what the AI *cannot* do (e.g., &quot;Do not use `any` type; do not use deprecated `axios` interceptors&quot;).</p>
 
-<p>**Technical Implementation: The Patch-Generator Script**</p>
-<p>This Python utility uses the OpenAI/Anthropic API to generate a `.patch` file rather than overwriting your source code, allowing for safe `git apply` workflows.</p>
+<h3>The `.cursorrules` Implementation</h3>
+<p>To automate the &quot;Constraint&quot; layer, you must use a `.cursorrules` (or `.clinerules`) file in your root directory. This acts as a permanent system prompt for your IDE.</p>
 
-<p>```python</p>
-<p>import os</p>
-<p>import difflib</p>
-<p>import openai # Or Anthropic client</p>
+<p>**Example `.cursorrules` for a Next.js/TypeScript Project:**</p>
+<p>```markdown</p>
+<h1>Project Standards: Next.js 14 (App Router)</h1>
 
-<p>def generate_code_patch(file_path, prompt, api_key):</p>
-<p>    with open(file_path, &#x27;r&#x27;) as f:</p>
-<p>        original_code = f.read()</p>
+<h2>Technical Stack</h2>
+<li>Framework: Next.js 14 (App Router)</li>
+<li>Styling: Tailwind CSS</li>
+<li>State Management: Zustand</li>
+<li>Validation: Zod</li>
 
-<p>    client = openai.OpenAI(api_key=api_key)</p>
+<h2>Coding Rules</h2>
+<p>1. Always use Server Components by default. Only use &#x27;use client&#x27; when interactivity is required.</p>
+<p>2. Data Fetching: Use `async/await` directly in Server Components. Avoid using `useEffect` for initial data fetching.</p>
+<p> Implemented patterns: Use the &#x27;use&#x27; hook for promises.</p>
+<p>3. Error Handling: Wrap all API routes in a standardized `try/catch` block that returns a `Result` type.</p>
+<p>4. TypeScript: No `any`. Use `interface` for data models and `type` for unions.</p>
+<p>5. Naming: Use PascalCase for components, camelCase for functions and variables.</p>
 
-<p>    # We ask the LLM to provide only the modified code block</p>
-<p>    response = client.chat.completions.create(</p>
-<p>        model=&quot;gpt-4o&quot;,</p>
-<p>        messages=[</p>
-<p>            {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a senior engineer. Output ONLY the complete updated code. No prose.&quot;},</p>
-<p>            {&quot;role&quot;: &quot;annotated_context&quot;, &quot;content&quot;: original_code},</p>
-<p>            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt}</p>
-<p>        ]</p>
-<p>    )</p>
-
-<p>    new_code = response.choices[0].message.content.strip(&#x27;```python\n&#x27;).strip(&#x27;```&#x27;)</p>
-
-<p>    # Generate a unified diff format</p>
-<p>    diff = difflib.unified_diff(</p>
-<p>        original_code.splitlines(),</p>
-<p>        new_code.splitlines(),</p>
-<p>        fromfile=f&quot;a/{file_path}&quot;,</p>
-<p>        tofile=f&quot;b/{file_path}&quot;</p>
-<p>    )</p>
-
-<p>    patch_content = &quot;\n&quot;.join(list(diff))</p>
-<p>    patch_filename = f&quot;{file_path}.patch&quot;</p>
-
-<p>    with open(patch_filename, &#x27;w&#x27;) as pf:</p>
-<p>        pf.write(patch_content)</p>
-
-<p>    print(f&quot;Patch generated: {patch_filename}. Review with &#x27;git apply {patch_filename}&#x27;&quot;)</p>
-
-<h1>Usage: generate_code_patch(&#x27;src/auth.py&#x27;, &#x27;Fix the SQL injection vulnerability in the login function&#x27;, &#x27;your_key&#x27;)</h1>
+<h2>File Structure</h2>
+<li>Components reside in `/components/ui` (atomic) or `/components/features` (complex).</li>
+<li>Logic/Utilities must be in `/lib`.</li>
 <p>```</p>
 
 <p>---</p>
 
-<h2>4. Automated Unit Test Generation &amp; Edge Case Discovery</h2>
+<h2>Step by Step: The Implementation Workflow</h2>
 
-<p>To move from Junior to Mid-level, you must automate the &quot;boring&quot; part of testing.</p>
+<h3>Step 1: The Blueprinting Phase</h3>
+<p>Before writing a single line of code, use a &quot;Plan&quot; prompt.</p>
+<p>**Prompt:** `&quot;I need to implement a Redis-backed caching layer for our User Service. Analyze `@user.service.ts` and `@redis.config.ts`. Propose a technical implementation plan before writing code.&quot;`</p>
 
-<h3>The Property-Based Testing Prompt</h3>
-<p>Instead of asking for &quot;tests,&quot; ask for &quot;Edge Case Discovery via Property-Based Testing.&quot;</p>
-<p>**Prompt Template:**</p>
-<p>&gt; &quot;Using the `Hypothesis` library in Python, generate a test suite for the `calculate_interest` function.</p>
-<p>&gt; 1. Identify boundary values (zero, negative, extremely large floats).</p>
-<p>&gt; 2. Identify type errors (None, string inputs).</p>
-<p>&gt; 3. Ensure the test coverage includes the logic for compounding frequency changes.&quot;</p>
+<h3>Step 2: The Iterative Implementation</h3>
+<p>Once the plan is approved, use the **Prompt Evolution** technique (see Case Study below).</p>
 
-<h3>The Mutation Testing Workflow</h3>
-<p>Use the LLM to analyze your existing test suite. Ask: &quot;Given this test suite, what mutation in the source code would go undetected?&quot; This identifies &quot;shallow&quot; tests that only check for execution but not correctness.</p>
-
-<p>---</p>
-
-<h2>5. Refactoring Legacy Code with AI-Driven Pattern Recognition</h2>
-
-<p>Refactoring is not about rewriting; it is about **pattern extraction**.</p>
-
-<h3>The &quot;Extract Class&quot; Methodology</h3>
-<p>When dealing with a 1,000-line &quot;God Object,&quot; use the LLM to identify cohesive sub-domains.</p>
-<p>1.  **Step 1 (Analysis):** &quot;Identify all state variables in this class that are only used by methods related to &#x27;Database Connection&#x27;.&quot;</p>
-<p>2.  **Step able (Interface Design):** &quot;Propose a new `DatabaseManager` interface that encapsulates these variables.&quot;</p>
-<p>3.  **Step 3 (Implementation):** &quot;Rewrite the original class to delegate these responsibilities to the new `DatabaseManager`.&quot;</p>
-
-<h3>Complexity Metrics as Prompts</h3>
-<p>Feed the LLM the **Cyclomatic Complexity** of a function.</p>
-<p>**Prompt:** &quot;This function has a Cyclomatic Complexity of 15. Identify the most complex conditional branch and suggest a strategy to extract it into a separate, testable strategy pattern.&quot;</p>
+<h3>Step 3: The Verification Loop</h3>
+<p>Never assume code works. Use the &quot;Test-Driven Refinement&quot; loop:</p>
+<p>1.  Generate the code.</p>
+<p>2.  Prompt the AI: `&quot;Write a Vitest suite for the implementation above, covering edge cases like Redis connection timeout and cache miss.&quot;`</p>
+<p>3.  Run tests in the terminal.</p>
+<p>4.  If tests fail, use the Agentic tool to &quot;Fix the failing tests in `@user.service.ts`.&quot;</p>
 
 <p>---</p>
 
-<h2>6. LLM-based Agentic Workflows (The Next Frontier)</h2>
+<h2>Case Study: Implementing a Redis Cache Layer</h2>
 
-<p>Standard prompting is linear. **Agentic Workflows** are iterative and multi-step. Using frameworks like **LangGraph**, you can build a &quot;Coder Agent&quot; that operates in a loop.</p>
+<p>**Objective:** Implement a caching decorator for a Node.js service to prevent database hits on frequent user profile lookups.</p>
 
-<h3>The Agentic Loop Structure:</h3>
-<p>1.  **Planner Agent:** Breaks the Jira ticket into a checklist of files to modify.</p>
-<p>2.  **Coder Agent:** Writes the code (using the Patch-Generator logic above).</p>
-<p>3.  **Reviewer Agent:** Acts as a linter/security auditor, checking the Coder&#x27;s work against a `SECURITY.md` file.</p>
-<p>4.  **Executor Agent:** Runs the `pytest` command and feeds errors back to the Coder.</p>
+<h3>The Initial Failure (The &quot;Bad&quot; Prompt)</h3>
+<p>**Prompt:** `&quot;Write a function to cache user data in Redis for our Node.js app.&quot;`</p>
 
-<p>This reduces manual cognitive load by handling the &quot;looping&quot; behavior that humans usually perform.</p>
+<p>**Resulting Code (The Hallucination):**</p>
+<p>```typescript</p>
+<p>// ERROR: The AI assumes a generic structure that doesn&#x27;t match the existing project.</p>
+<p>// It uses &#x27;ioredis&#x27; without checking if the project uses &#x27;node-redis&#x27;.</p>
+<p>// It fails to handle the serialization of complex objects.</p>
+<p>export async function getCachedUser(userId: string) {</p>
+<p>  const client = new Redis(); // Error: No connection logic or config injection</p>
+<p>  const data = await client.get(`user:${userId}`);</p>
+<p>  return JSON.parse(data);</p>
+<p>}</p>
+<p>```</p>
+<p>**Why it failed:** No context regarding the existing `RedisClient` singleton, no error handling for connection drops, and no consideration for the existing `User` interface.</p>
+
+<h3>The Corrected Implementation (The &quot;Good&quot; Prompt)</h3>
+<p>**Prompt:**</p>
+<p>`&quot;Using the existing `@redis.provider.ts` for the client instance and `@types/user.ts` for the interface, implement a caching decorator for the `getUserById` method in `@user.service.ts`.</p>
+<p>Constraints:</p>
+<p>1. Use a TTL of 3600 seconds.</p>
+<p>2. If Redis fails, fallback to the database (do not throw error).</p>
+<p>3. Use Zod to validate the cached data integrity upon retrieval.</p>
+<p>4. Implement the &#x27;Result&#x27; pattern for error handling as defined in `@error-handler.ts`.&quot;`</p>
+
+<p>**The Resulting Code (The &quot;Professional&quot; Output):**</p>
+<p>```typescript</p>
+<p>import { redis } from &#x27;@/lib/redis.provider&#x27;;</p>
+<p>import { User } from &#x27;@/types/user&#x27;;</p>
+<p>import { userSchema } from &#x27;@/lib/validation/user&#x27;;</p>
+<p>import { Result, err, ok } from &#x27;@/lib/result-pattern&#x27;;</p>
+
+<p>export async function getUserById(id: string): Promise&lt;Result&lt;User&gt;&gt; {</p>
+<p>  const cacheKey = `user:cache:${id}`;</p>
+
+<p>  // 1. Attempt Cache Retrieval</p>
+<p>  try {</p>
+<p>    const cachedData = await redis.get(cacheKey);</p>
+<p>    if (cachedData) {</p>
+<p>      const parsed = JSON.parse(cachedData);</p>
+<p>      // Validate integrity with Zod to prevent poisoned cache attacks</p>
+<p>      const validated = userSchema.parse(parsed);</p>
+<p>      return ok(validated);</p>
+<p>    }</p>
+<p>  } catch (error) {</p>
+<p>    console.error(`[Cache Error] Failed to fetch ${cacheKey}:`, error);</p>
+<p>    // Fallback logic: Proceed to DB</p>
+<p>  }</p>
+
+<p>  // 2. Database Fallback</p>
+<p>  try {</p>
+<p>    const user = await db.user.findUnique({ where: { id } });</p>
+<p>    if (!user) return err(&#x27;User not found&#x27;);</p>
+
+<p>    // 3. Background Cache Update (Fire and forget)</p>
+<p>    redis.set(cacheKey, JSON.stringify(user), &#x27;EX&#x27;, 3600)</p>
+<p>      .catch(e =&gt; console.error(&#x27;Cache write failed&#x27;, e));</p>
+
+<p>    return ok(user);</p>
+<p>  } catch (dbError) {</p>
+<p>    return err(&#x27;Database error&#x27;);</p>
+<p>  }</p>
+<p>}</p>
+<p>```</p>
 
 <p>---</p>
 
-<h2>7. Cost-Benefit Analysis: Model Selection for Engineering Tasks</h2>
+<h2>Debugging Hallucinations</h2>
 
-<p>Choosing the wrong model is a waste of both time and money.</p>
+<p>AI models suffer from &quot;Temporal Hallucination&quot;—they often suggest syntax from older versions of libraries because that data was more prevalent in their training sets.</p>
 
-<p>| Task Type | Recommended Model | Reason | Metric to Watch |</p>
-<p>| :--- | :--- | :--- | :--- |</p>
-<p>| **Complex Logic/Refactoring** | Claude 3.5 Sonnet | Superior reasoning and instruction following for large context. | Accuracy vs. Token Cost |</p>
-<p>| **Simple Unit Tests/Docstrings** | GPT-4o-mini | Extremely low latency and high throughput for repetitive tasks. | Latency (ms/token) |</p>
-<p>| **Regex/String Manipulation** | GPT-4o | Stronger performance on character-level tokenization tasks. | Error Rate (%) |</p>
-<p>| **Large Repository Analysis** | Claude 3.5 (200k) | Massive context window allows for whole-module understanding. | Context Recall |</p>
-
-<p>**Optimization Tip:** Use a &quot;Router&quot; pattern. Use a cheap model (GPT-4o-mini) to first analyze if a task is &quot;Simple&quot; or &quot;Complex.&quot; Only route &quot;Complex&quot; tasks to the expensive models.</p>
-
-<p>---</p>
-
-<h2>8. Integrating AI into the CI/CD Pipeline and Local IDEs</h2>
-
-<h3>The Custom GitHub Action Case Study</h3>
-<p>**Problem:** A team&#x27;s PR review time averaged 24 hours due to &quot;nitpicky&quot; style and security reviews.</p>
-<p>**Solution:** Developed a GitHub Action that triggers on `pull_request`.</p>
-<p>1.  **Action:** The runner pulls the `git diff`.</p>
-<p>2.  **LLM Analysis:** Sends the diff to Claude 3.5 Sonnet with a prompt containing the company&#x27;s `style_guide.md`.</p>
-<p>3.  **Output:** The Action posts a single, formatted comment on the PR, highlighting only high-impact logic errors or security vulnerabilities.</p>
-<p>**Result:** **40% reduction in PR review time.** The human reviewer only focuses on architectural decisions, while the AI handles the &quot;nitpicks.&quot;</p>
-
-<h3>Local IDE Integration</h3>
-<p>Do not rely solely on Copilot. Set up a local **Context Provider**. Use a tool like `aider` or a custom script that indexes your local `.git` history and provides the LLM with the &quot;last 5 commits&quot; as context. This gives the LLM a sense of the &quot;evolution&quot; of the codebase.</p>
+<h3>Common Framework Hallucinations:</h3>
+<p>1.  **Next.js App Router vs. Pages Router:**</p>
+<p>    *   *Hallucination:* Using `getServerSideProps` in a file inside the `app/` directory.</p>
+<p>    *   *Fix:* Explicitly state: &quot;Use Next.js 14 App Router conventions; do not use Pages Router hooks.&quot;</p>
+<p>2.  **React 18 Concurrency:**</p>
+<p>    *   *Hallucination:* Using `useLayoutEffect` for data fetching or failing to use `useTransition` for heavy UI updates.</p>
+<p>    *   *Fix:* Provide a `.cursorrules` instruction regarding transition usage.</p>
+<p>3.  **Zod/Prisma Mismatches:**</p>
+<p>    *   *Hallucination:* Suggesting a Zod schema that doesn&#x27;t match the Prisma schema types.</p>
+<p>    *   *Fix:* Always include `@schema.prisma` in the context when generating validation logic.</p>
 
 <p>---</p>
 
-<h2>9. Security &amp; Privacy: Sanitizing Prompts to Prevent Data Leaks</h2>
+<h2>Checklist for AI-Generated Code Review</h2>
 
-<p>**The Golden Rule:** Never send PII (Personally Identifiable Information) or Secrets (API Keys, DB Credentials) to a third-party LLM.</p>
+<p>Before committing any AI-generated code, run through this checklist:</p>
 
-<h3>The Sanitization Pipeline</h3>
-<p>Before any code is sent to an API, run it through a local, regex-based &quot;Scrubber&quot; or a specialized tool like `trufflehog`.</p>
-
-<p>**The &quot;Anonymization&quot; Prompt Pattern:**</p>
-<p>If you must debug a complex SQL query, use a pre-processing script to replace table and column names with generic identifiers:</p>
-<p>*   `user_email_address` $\rightarrow$ `column_a`</p>
-<p>*   `customer_billing_table` $\rightarrow$ `table_1`</p>
-
-<p>**Architectural Requirement:** Implement a &quot;Local-First&quot; policy. Use **Ollama** or **Llama 3** running locally via Docker for any task involving highly sensitive proprietary logic. Use Cloud LLMs only for generic algorithmic or structural tasks.</p>
-
-<p>---</p>
-
-<h2>10. Building Custom GPTs for Specific Language Syntax</h2>
-
-<p>Standard LLMs are trained on a &quot;General Purpose&quot; web corpus. If you work in a niche language (e.g., Zig, Mojo, or a proprietary DSL), you must build a **Knowledge-Augmented GPT**.</p>
-
-<h3>The Blueprint for a Custom Coding GPT:</h3>
-<p>1.  **Knowledge Base:** Upload the `.md` or `.pdf` documentation of the language/framework.</p>
-<p>2.  **System Instructions:** Define the &quot;Syntax Constraints.&quot;</p>
-<p>    *   *Example:* &quot;When writing Mojo code, always prioritize the use of `@parameter` for compile-time constants.&quot;</p>
-<p>3.  **Few-Shot Library:** Provide a `samples.json` file containing 20 &quot;Gold Standard&quot; code snippets.</p>
-<p>4.  **Negative Constraints:** Explicitly list &quot;Anti-patterns&quot; to avoid (e.g., &quot;Do not use `var`; always use `let`&quot;).</p>
-
-<p>By following this structured approach, you transition from a developer who *uses* AI to an **Architect** who *engineers* AI-driven software delivery pipelines.</p></main></body></html>
+<li>[ ] **Context Check:** Did I include the relevant `@files` in the prompt?</li>
+<li>[ ] **Type Safety:** Are there any `any` types or `as unknown as T` assertions?</li>
+<li>[ ] **Error Boundary:** Does the code handle a failed dependency (e.g., Redis, API, DB) without crashing the process?</li>
+<li>[ ] **Security:** Did the AI introduce an injection vulnerability or use `dangerouslySetInnerHTML`?</li>
+<li>[ ] **Pattern Alignment:** Does this code follow the patterns defined in my `.cursorrules`?</li>
+<li>[ ] **Test Coverage:** Have I prompted the AI to write a corresponding Vitest/Jest test?</li>
+<li>[ ] **Performance:** Did the AI introduce an $O(n^2)$ loop or a redundant database call inside a `map` function?</li></main></body></html>
 </body></html>

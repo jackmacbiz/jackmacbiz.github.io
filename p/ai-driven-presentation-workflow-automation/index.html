@@ -1,0 +1,204 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — The AI-Powered Deck Architect: From Prompt to Polished Presentation</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>The AI-Powered Deck Architect: From Prompt to Polished Presentation</h1><p>Reduce presentation creation time by 80% using a structured multi-agent AI workflow that automates research, scripting, and visual design.</p><div class=dl><a href='/downloads/ai-driven-presentation-workflow-automation.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Prop Firm Pass Playbook: Payout Readiness Kit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, Inter, Arial, sans-serif; margin: 0; color: #161616; background: #f7f7f2; }
+    main { max-width: 880px; margin: 0 auto; padding: 42px 24px 80px; background: #fff; }
+    h1 { font-size: 38px; line-height: 1.04; margin: 0 0 16px; }
+    h2 { border-top: 2px solid #151515; padding-top: 24px; margin-top: 36px; }
+    h3 { margin-top: 24px; }
+    p, li { font-size: 17px; line-height: 1.58; }
+    li { margin: 7px 0; }
+  </style>
+</head>
+<body><main><h1>The AI-Powered Deck Architect: From Prompt to Polished Presentation</h1>
+
+<p>This guide provides a proprietary, multi-agent workflow designed to transform raw, unstructured data into high-fidelity, boardroom-ready presentations. We bypass the &quot;chatting with AI&quot; approach in favor of a structured pipeline: **Extraction $\rightarrow$ Structuring $\rightarrow$ Automation $\rightarrow$ Visualization.**</p>
+
+<p>---</p>
+
+<h2>The AI Presentation Stack: Essential Tools &amp; Integrations</h2>
+
+<p>To achieve an 80% reduction in creation time, you cannot rely on a single LLM. You need a specialized stack that handles different cognitive loads.</p>
+
+<p>1.  **The Brain (Orchestrator):** **Claude 3.5 Sonnet.** While GPT-4o is excellent for general reasoning, Claude 3.5 Sonnet currently outperforms in large-context window management and following complex, multi-step JSON schemas without &quot;breaking character.&quot;</p>
+<p>2.  **The Researcher (Data Ingestion):** **Perplexity AI (Pro Mode).** Use this to ingest live web data and academic citations. It provides the verifiable &quot;source of truth&quot; required for corporate decks.</p>
+<p>3.  **The Architect (Structure &amp; Code):** **ChatGPT (GPT-4o) with Advanced Data Analysis enabled.** This is your engine for generating Python scripts to manipulate `.pptx` files directly, bypassing the limitations of VBA.</p>
+<p>4.  **The Visual Designer:** **Midjourney v6.1.** Essential for generating high-end, consistent photographic and iconographic assets.</p>
+<p>5.  **The Automation Bridge:** **Python (python-pptx library).** Do not rely on VBA for complex layouts. Python allows for programmatic control over text boxes, image placement, and shape scaling that VBA lacks.</p>
+
+<p>---</p>
+
+<h2>Phase 1: Automated Research &amp; Data Extraction Strategies</h2>
+
+<p>The biggest failure in AI presentations is &quot;hallucinated insight.&quot; To prevent this, you must implement a **Two-Pass Extraction Strategy.**</p>
+
+<h3>Step 1: The Deep Scan (Perplexity)</h3>
+<p>Upload your raw PDFs, earnings reports, or meeting transcripts to Perplexity. Use this prompt to extract structured metrics:</p>
+
+<p>&gt; **Prompt:** &quot;Act as a Senior Market Analyst. Analyze the attached [Document Name]. Extract all quantitative metrics, specifically focusing on Year-over-_Year (YoY) growth, market share percentages, and competitive threats. Format the output as a Markdown table. For every metric, include a direct quote from the text as a &#x27;Source Verification&#x27; column.&quot;</p>
+
+<h3>Step 2: The Structured Synthesis (Claude 3.5 Sonnet)</h3>
+<p>Once you have the Markdown table, pass it to Claude to transform it into a &quot;Slide Logic Map.&quot; This prevents the AI from losing the narrative thread.</p>
+
+<p>&gt; **Prompt:** &quot;I am providing a Markdown table of market data. Your task is to convert this data into a &#x27;Slide Narrative Map.&#x27; For each slide, define: 1. The Core Assertion (The &#x27;So What?&#x27;), 2. The Supporting Data Point (from the table), and 3. The Visual Instruction (e.g., &#x27;Bar chart showing X vs Y&#x27;). Do not invent data. If a metric is missing, mark it as [DATA GAP].&quot;</p>
+
+<p>---</p>
+
+<h2>Phase 2: Prompt Engineering for Narrative Storytelling &amp; Scripting</h2>
+
+<p>A deck is not a list of facts; it is a persuasive argument. You must use the **SCQA Framework (Situation, Complication, Question, Answer)** to prompt your LLM.</p>
+
+<h3>The Master Scripting Template</h3>
+<p>Use this template to generate the &quot;Speaker Notes&quot; and &quot;Slide Text&quot; simultaneously. This ensures the visual text is punchy (minimalist) while the notes are deep (informative).</p>
+
+<p>**The Prompt Schema:**</p>
+<p>```markdown</p>
+<p>Context: [Insert Project Overview]</p>
+<p>Framework: SCQA (Situation, Complication, Question, Answer)</p>
+<p>Tone: [e.g., Urgent, Authoritative, Visionary]</p>
+
+<p>Task: Generate a 10-slide presentation outline.</p>
+<p>For each slide, output in the following JSON format:</p>
+
+<p>{</p>
+<p>  &quot;slide_number&quot;: integer,</p>
+<p>  &quot;slide_title&quot;: &quot;string (max 7 words)&quot;,</p>
+<p>  &quot;bullet_points&quot;: [&quot;string&quot;, &quot;string&quot;, &quot;string&quot;],</p>
+<p>  &quot;speaker_notes&quot;: &quot;string (detailed, conversational)&quot;,</p>
+<p>  &quot;visual_layout&quot;: &quot;string (e.g., split_screen, centered_icon, full_bleed_image)&quot;</p>
+<p>}</p>
+
+<p>Constraints:</p>
+<li>Bullet points must follow the &#x27;One Idea Per Line&#x27; rule.</li>
+<li>No more than 3 bullets per slide.</li>
+<li>All data must be pulled from the provided context.</li>
+<p>```</p>
+
+<p>---</p>
+
+<h2>Phase 3: Automating Slide Layouts with Python Workflows</h2>
+
+<p>VBA is fragile and prone to crashing when parsing JSON. Instead, use **Python** and the `python-pptx` library. This allows you to feed the JSON output from Phase 2 directly into a script that builds the `.pptx` file.</p>
+
+<h3>The Bridge: From JSON to PPTX</h3>
+<p>First, ensure your LLM output is strictly valid JSON. Then, run this Python script locally.</p>
+
+<p>**The Python Automation Script:**</p>
+<p>```python</p>
+<p>import json</p>
+<p>from pptx import Presentation</p>
+<p>from pptx.util import Inches, Pt</p>
+
+<h1>Load your JSON data generated by Claude/GPT</h1>
+<p>json_data = &#x27;&#x27;&#x27;</p>
+<p>[</p>
+<p>  {</p>
+<p>    &quot;slide_number&quot;: 1,</p>
+<p>    &quot;slide_title&quot;: &quot;Q3 Market Expansion Strategy&quot;,</p>
+<p>    &quot;bullet_points&quot;: [&quot;Targeting EMEA Region&quot;, &quot;Focus on SaaS Verticals&quot;, &quot;Projected 15% Growth&quot;],</p>
+<p>    &quot;visual_layout&quot;: &quot;title_only&quot;</p>
+<p>_},</p>
+<p>  {</p>
+<p>    &quot;slide_number&quot;: 2,</p>
+<p>    &quot;slide_title&quot;: &quot;Competitive Landscape&quot;,</p>
+<p>    &quot;bullet_points&quot;: [&quot;Competitor A: 20% Share&quot;, &quot;Competitor B: 15% Share&quot;, &quot;Our Position: Emerging&quot;],</p>
+<p>    &quot;visual_layout&quot;: &quot;content&quot;</p>
+<p>  }</p>
+<p>]</p>
+<p>&#x27;&#x27;&#x27;</p>
+
+<p>slides_data = json.loads(json_data)</p>
+<p>prs = Presentation()</p>
+
+<p>for slide_info in slides_data:</p>
+<p>    # Use &#x27;Title and Content&#x27; layout (Layout index 1)</p>
+<p>    slide_layout = prs.slide_layouts[1]</p>
+<p>    slide = prs.slides.add_slide(slide_layout)</p>
+
+<p>    # Set Title</p>
+<p>    title = slide.shapes.title</p>
+<p>    title.text = slide_info[&#x27;slide_title&#x27;]</p>
+
+<p>    # Set Content</p>
+<p>    body_shape = slide.placeholders[1]</p>
+<p>    tf = body_shape.text_frame</p>
+<p>    tf.text = slide_info[&#x27;bullet_points&#x27;][0]</p>
+
+<p>    for point in slide_info[&#x27;bullet_points&#x27;][1:]:</p>
+<p>        p = tf.add_paragraph()</p>
+<p>        p.text = point</p>
+<p>        p.level = 0</p>
+
+<p>prs.save(&#x27;Automated_Presentation.pptx&#x27;)</p>
+<p>print(&quot;Presentation generated successfully.&quot;)</p>
+<p>```</p>
+
+<p>---</p>
+
+<h2>Phase 4: Generative AI for Consistent Visual Assets &amp; Iconography</h2>
+
+<p>To avoid the &quot;AI-generated&quot; look (which uses generic, glossy 3D characters), you must use **Style References (--sref)** in Midjourney. This ensures that a slide from page 1 looks like it belongs to page 10.</p>
+
+<h3>Achieving Visual Cohesion</h3>
+<p>1.  **The Anchor Image:** Generate one high-quality &quot;Hero&quot; image that represents your brand&#x27;s aesthetic.</p>
+<p>2.  **The `--sref` Technique:** Copy the URL of your Hero Image.</p>
+<p>3.  **The Prompt Construction:**</p>
+<p>    `[Subject Description] --sref [URL of Hero Image] --sw 1000 --v 6.1`</p>
+
+<p>**Example Workflow for a Tech Startup:**</p>
+<p>*   **Step 1 (The Hero):** `/imagine prompt: A minimalist, high-tech macro shot of blue circuit patterns, cinematic lighting, 8k --ar 16:9` (Copy this image URL).</p>
+<p>*   **Step 2 (The Icon):** `/imagine prompt: A 3D isometric icon of a cloud server, frosted glass texture --sref [URL] --v 6.1`</p>
+<p>*   **Step 3 (The Background):** `/imagine prompt: Abstract flowing silk texture, deep navy and silver --sref [URL] --v 6.1`</p>
+
+<p>**Parameter Guide:**</p>
+<p>*   `--sw 1000`: Sets &quot;Style Weight&quot; to maximum. Use this to force the AI to adhere strictly to your anchor image.</p>
+<p>*   `--cref [URL]`: Use &quot;Character Reference&quot; if you are using a consistent person/mascot across slides.</p>
+
+<p>---</p>
+
+<h2>Case Study: Automating a Q3 Market Entry Deck</h2>
+
+<p>**Scenario:** A Marketing Manager needs to present a 12-slide deck on entering the Brazilian market. They have 3 raw PDF reports and 2 hours before the meeting.</p>
+
+<p>1.  **T-Minus 90 Mins (Extraction):** Upload PDFs to Perplexity. Extract: &quot;Market Size: $4B,&quot; &quot;Key Competitors: Local players X and Y,&quot; &quot;Barriers: Regulatory complexity.&quot;</p>
+<p>2.  **T-Minus 70 Mins (Logic):** Feed Perplexity results into Claude. Use the **Master Scripting Template**. Claude outputs a 12-slide JSON object with specific &quot;Visual Instructions&quot; (e.g., &quot;Slide 4: Map of Brazil with heat zones&quot;).</p>
+<p>3.  **T-50 Mins (Generation):** Run the Python script using the JSON. A `.pptx` file is generated with all titles, bullets, and speaker notes populated.</p>
+<p>4.  **T-30 Mins (Visuals):** Use Midjourney with `--sref` (using the company&#x27;s brand colors) to generate a &quot;Brazilian Urban Landscape&quot; hero image and &quot;Regulatory Icon&quot; set.</p>
+<p>5.  **T-10 Mins (Assembly):** Drop the Midjourney assets into the PowerPoint.</p>
+<p>6.  **Result:** A professionally structured, data-backed, visually cohesive deck produced in 50 minutes instead of 5 hours.</p>
+
+<p>---</p>
+
+<h2>Phase 5: The Human-in-the-Loop: Rapid Review Protocols</h2>
+
+<p>Never present an unvetted AI deck. Use this **3-Point Audit**:</p>
+
+<p>1.  **The Data Integrity Check:** Cross-reference the &quot;Slide Logic Map&quot; against the original source PDF. Focus specifically on decimal points and percentages.</p>
+<p>2.  **The &quot;Hallucination&quot; Scan:** Search the Speaker Notes for &quot;certainly,&quot; &quot;it is widely believed,&quot; or &quot;as of the latest trends.&quot; These are linguistic markers where LLMs often pivot from fact to speculation.</p>
+<p>3.  **The Visual Friction Test:** Flip through the slides rapidly. If any slide feels &quot;heavier&quot; (too much text) or &quot;emptier&quot; than others, adjust the Python JSON structure and re-run.</p>
+
+<p>---</p>
+
+<h2>Phase 6: Scaling Production: Creating Reusable AI Templates</h2>
+
+<p>To scale, do not start from scratch. Build a **&quot;Prompt Library&quot;** and a **&quot;Python Master Template.&quot;**</p>
+
+<p>*   **The Prompt Library:** Store your JSON-schema prompts in a Notion database, categorized by deck type (e.g., *Investor Pitch, Quarterly Business Review, Sales Discovery*).</p>
+<p>*   **The Python Master Template:** Maintain a `.py` file that includes pre-configured `python-pptx` functions for common layouts like &quot;Data Comparison&quot; (two columns) and &quot;Timeline&quot; (horizontal nodes).</p>
+<p>*   **The Asset Library:** Keep a folder of `--sref` URLs and Midjourney prompts that consistently yield your brand&#x27;s &quot;look and feel.&quot;</p>
+
+<p>---</p>
+
+<h2>Troubleshooting: Common Pipeline Failures</h2>
+
+<p>| Failure | Cause | Solution |</p>
+<p>| :--- | :--- | :--- |</p>
+<p>| **JSON Parsing Error** | LLM added conversational text (e.g., &quot;Here is your JSON:&quot;) | Use &quot;Output ONLY valid JSON&quot; in your prompt. Use a Python `try-except` block to strip non-JSON characters. |</p>
+<p>| **Python `pptx` Error** | Missing keys in the JSON (e.g., `visual_layout` is missing) | Implement a **JSON Schema Validator** (using the `jsonschema` library) before running the PPTX script. |</p>
+<p>| **Visual Inconsistency** | Midjourney `--sref` weight is too low | Increase `--sw` to 1000. Ensure the reference image is high-contrast and color-dominant. |</p>
+<p>| **Broken Layouts** | Text overflow in Python-generated text boxes | In your Python script, add a character count check. If `len(text) &gt; 200`, trigger a `font_size` reduction function. |</p></main></body></html>
+</body></html>

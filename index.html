@@ -19,6 +19,20 @@
   .links a:hover{color:#1d1d1f;border-color:#1d1d1f}
   footer{margin-top:72px;padding-top:24px;border-top:1px solid #e5e5e7;color:#888;font-size:14px}
   footer a{color:#888}
+  /* email opt-in (additive) */
+  .optin{margin-top:40px;padding:24px;background:#fff;border:1px solid #e5e5e7;border-radius:12px;max-width:560px}
+  .optin h2{font-size:19px;font-weight:700;margin-bottom:6px;letter-spacing:-0.01em}
+  .optin p{color:#555;font-size:15px;margin-bottom:14px}
+  .optin form{display:flex;gap:8px;flex-wrap:wrap}
+  .optin input[type=email]{flex:1 1 220px;min-width:0;padding:12px 14px;font-size:16px;border:1px solid #d2d2d7;border-radius:8px;color:#1d1d1f}
+  .optin input[type=email]:focus{outline:none;border-color:#34c759}
+  .optin button{background:#1d1d1f;color:#fff;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:15px;cursor:pointer}
+  .optin button:hover{background:#333}
+  .optin .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .optin .note{font-size:13px;color:#999;margin:10px 0 0}
+  .optin .msg{font-size:15px;margin-top:12px;display:none}
+  .optin .msg.ok{display:block;color:#1a7f37}
+  .optin .msg.err{display:block;color:#b42318}
 </style>
 </head>
 <body>
@@ -27,7 +41,60 @@
   <p class="lead">Practical, instant-download digital toolkits — AI workflow kits for coding, presentations, interviews, research, and design. No accounts, no subscriptions: pay once, download, and put it to work.</p>
   <a class="cta" href="/store/">Browse the store →</a>
   <div class="links"><a href="/blog/">Read the blog</a></div>
+
+  <!-- email opt-in / lead capture (additive — does not touch checkout) -->
+  <section class="optin" id="optin">
+    <h2>Get the free starter pack</h2>
+    <p>Drop your email and I'll send a free sample toolkit, plus the occasional new release. No spam, unsubscribe anytime.</p>
+    <form id="optin-form" novalidate>
+      <!-- honeypot: hidden from humans, bots fill it -->
+      <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address">
+      <button type="submit">Send it to me →</button>
+      <input type="hidden" name="source" value="homepage">
+      <input type="hidden" name="product_interest" value="starter-pack">
+    </form>
+    <p class="msg" id="optin-msg" role="status"></p>
+    <p class="note">Or email <a href="mailto:jackmacbiz@gmail.com">jackmacbiz@gmail.com</a> directly.</p>
+  </section>
+
   <footer>© JackMacBiz · <a href="mailto:jackmacbiz@gmail.com">jackmacbiz@gmail.com</a></footer>
 </div>
+
+<script>
+/* Lead capture (additive). Posts to the fleet's revenue webhook /lead endpoint.
+   ENDPOINT is the public Cloudflare tunnel to the local webhook; if cloudflared
+   restarts the URL changes — update the one constant below (or point it at a
+   stable domain later). On any failure we fall back to a mailto: so a lead is
+   never silently lost. This script NEVER touches the Stripe buy buttons. */
+(function () {
+  var ENDPOINT = "https://cant-precipitation-thereby-obtain.trycloudflare.com/lead";
+  var form = document.getElementById("optin-form");
+  var msg = document.getElementById("optin-msg");
+  if (!form) return;
+  function show(text, ok) { msg.textContent = text; msg.className = "msg " + (ok ? "ok" : "err"); }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var fd = new FormData(form);
+    var email = (fd.get("email") || "").toString().trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { show("Please enter a valid email.", false); return; }
+    var body = new URLSearchParams();
+    fd.forEach(function (v, k) { body.append(k, v); });
+    body.append("page", location.href);
+    var btn = form.querySelector("button"); if (btn) btn.disabled = true;
+    fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (res.ok && res.j && res.j.ok) { form.reset(); show("You're in! Check your inbox shortly.", true); }
+        else { throw new Error("bad"); }
+      })
+      .catch(function () {
+        show("Couldn't reach the server — email jackmacbiz@gmail.com and I'll add you.", false);
+        window.location.href = "mailto:jackmacbiz@gmail.com?subject=Send%20me%20the%20starter%20pack&body=" + encodeURIComponent(email);
+      })
+      .finally(function () { if (btn) btn.disabled = false; });
+  });
+})();
+</script>
 </body>
 </html>

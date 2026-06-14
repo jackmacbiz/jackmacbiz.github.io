@@ -1,0 +1,49 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Thank you — The Dorm Room Design App Toolkit</title><style>body{font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1d1d1f}.ok{background:#e8f7ee;border:1px solid #34c759;border-radius:10px;padding:14px 18px}.dl{background:#111;border-radius:12px;padding:22px;margin:22px 0;text-align:center}.dl a{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800}</style></head><body><div class=ok>✅ <strong>Payment received — thank you.</strong> Your download is below.</div><h1>The Dorm Room Design App Toolkit</h1><p>A set of practical, ready-to-use tools for dorm room design app.</p><div class=dl><a href='/downloads/dorm-room-design-app.zip' download>⬇ Download your kit (.zip)</a></div><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Dorm Room Design App Toolkit — Quick-Start Manual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, Inter, Arial, sans-serif; margin: 0; color: #161616; background: #f7f7f2; }
+    main { max-width: 880px; margin: 0 auto; padding: 42px 24px 80px; background: #fff; }
+    h1 { font-size: 38px; line-height: 1.04; margin: 0 0 16px; }
+    h2 { border-top: 2px solid #151515; padding-top: 24px; margin-top: 36px; }
+    h3 { margin-top: 24px; }
+    p, li { font-size: 17px; line-height: 1.58; }
+    li { margin: 7px 0; }
+  </style>
+</head>
+<body><main><h1>The Dorm Room Design App Toolkit — Quick-Start Manual</h1>
+
+<p>This manual provides essential guidance for developers building or refining dorm room design applications. It outlines core functionalities, user interface standards, and technical requirements to streamline the development process. Follow these instructions to ensure your app meets the specific needs of students managing limited living spaces.</p>
+
+<h2>Progress Tracker</h2>
+
+<p>Open `progress-tracker.csv` and add one row per check-in. Fill `goal`, the `metric` you&#x27;re moving, your `target_value`, and the `actual_value` so far.</p>
+
+<li>`pct_to_target` = `actual_value` / `target_value` * 100</li>
+
+<p>Worked example (row 1): 4 of 10 tasks done -&gt; pct_to_target = 4 / 10 * 100 = **40%**, status `on_track`. Update `status` to `behind` the moment actuals slip so you catch a stall early instead of at the deadline.</p>
+
+<h2>Planner</h2>
+
+<p>Open `planner.csv` and plan one row per week. Set the single `top_priority`, write `why_it_matters` in one line, list the `key_tasks`, and block `time_block_hours`. Mark `done` YES/NO at week&#x27;s end.</p>
+
+<p>Pick ONE top priority per week — a planner with five priorities has none. If `done` is NO two weeks running, the task is too big; split it.</p>
+
+<h2>Weekly Review</h2>
+
+<p>Open `weekly-review.csv` every Friday. Capture `what_worked`, `what_didnt`, and exactly `one_change_next_week`. Note which `metric_moved` and `by_how_much`.</p>
+
+<p>The discipline is one change per week — small, compounding corrections beat occasional overhauls. Read last week&#x27;s `one_change` before you plan the next.</p>
+
+<h2>Checklists &amp; Worksheets</h2>
+
+<li>`getting-started-checklist.md`: open it before each work block and go top to bottom; treat every unchecked item as a reason you&#x27;re not ready yet.</li>
+
+
+<h2>How the tools work together</h2>
+
+<p>Set this week&#x27;s single priority in `planner.csv`. Track the metric that priority moves in `progress-tracker.csv`. Every Friday, close the loop in `weekly-review.csv` with one concrete change for next week. Repeat until `pct_to_target` reaches 100% — then set the next goal.</p></main></body></html>
+</body></html>

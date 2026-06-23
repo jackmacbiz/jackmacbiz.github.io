@@ -51,6 +51,9 @@
       <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address">
       <button type="submit">Send it to me →</button>
+      <input type="hidden" name="_subject" value="JackMacBiz homepage lead">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
       <input type="hidden" name="source" value="homepage">
       <input type="hidden" name="product_interest" value="starter-pack">
     </form>
@@ -62,13 +65,11 @@
 </div>
 
 <script>
-/* Lead capture (additive). Posts to the fleet's revenue webhook /lead endpoint.
-   ENDPOINT is the public Cloudflare tunnel to the local webhook; if cloudflared
-   restarts the URL changes — update the one constant below (or point it at a
-   stable domain later). On any failure we fall back to a mailto: so a lead is
-   never silently lost. This script NEVER touches the Stripe buy buttons. */
+/* Lead capture (additive). Uses a stable hosted form endpoint; on any failure
+   it falls back to mailto so a lead is never silently lost. This script NEVER
+   touches the Stripe buy buttons. */
 (function () {
-  var ENDPOINT = "https://cant-precipitation-thereby-obtain.trycloudflare.com/lead";
+  var ENDPOINT = "https://formsubmit.co/ajax/jackmacbiz@gmail.com";
   var form = document.getElementById("optin-form");
   var msg = document.getElementById("optin-msg");
   if (!form) return;
@@ -85,7 +86,7 @@
     fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
-        if (res.ok && res.j && res.j.ok) { form.reset(); show("You're in! Check your inbox shortly.", true); }
+        if (res.ok && res.j && (res.j.ok || res.j.success || res.j.message)) { form.reset(); show("You're in! Check your inbox shortly.", true); }
         else { throw new Error("bad"); }
       })
       .catch(function () {

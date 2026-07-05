@@ -1,101 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JackMacBiz — Instant-download digital toolkits</title>
-<meta name="description" content="Practical, instant-download digital products: AI workflow kits for coding, presentations, interviews, research, and design. Pay once, download, use.">
-<link rel="canonical" href="https://jackmacbiz.github.io/">
-<style>
-  *{box-sizing:border-box;margin:0;padding:0;overflow-wrap:break-word}
-  body{font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1d1d1f;background:#fafafa}
-  .wrap{max-width:760px;margin:0 auto;padding:72px 24px}
-  h1{font-size:clamp(32px,6vw,42px);font-weight:700;letter-spacing:-0.02em;margin-bottom:14px}
-  .lead{color:#555;font-size:18px;margin-bottom:30px;max-width:560px}
-  .cta{display:inline-block;background:#34c759;color:#06210f;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:700;font-size:16px}
-  .cta:hover{background:#2fb350}
-  .links{margin-top:26px;font-size:15px}
-  .links a{color:#666;text-decoration:none;border-bottom:1px solid #d2d2d7}
-  .links a:hover{color:#1d1d1f;border-color:#1d1d1f}
-  footer{margin-top:72px;padding-top:24px;border-top:1px solid #e5e5e7;color:#888;font-size:14px}
-  footer a{color:#888}
-  /* email opt-in (additive) */
-  .optin{margin-top:40px;padding:24px;background:#fff;border:1px solid #e5e5e7;border-radius:12px;max-width:560px}
-  .optin h2{font-size:19px;font-weight:700;margin-bottom:6px;letter-spacing:-0.01em}
-  .optin p{color:#555;font-size:15px;margin-bottom:14px}
-  .optin form{display:flex;gap:8px;flex-wrap:wrap}
-  .optin input[type=email]{flex:1 1 220px;min-width:0;padding:12px 14px;font-size:16px;border:1px solid #d2d2d7;border-radius:8px;color:#1d1d1f}
-  .optin input[type=email]:focus{outline:none;border-color:#34c759}
-  .optin button{background:#1d1d1f;color:#fff;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:15px;cursor:pointer}
-  .optin button:hover{background:#333}
-  .optin .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-  .optin .note{font-size:13px;color:#999;margin:10px 0 0}
-  .optin .msg{font-size:15px;margin-top:12px;display:none}
-  .optin .msg.ok{display:block;color:#1a7f37}
-  .optin .msg.err{display:block;color:#b42318}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack Mac — Business &amp; Trading</title>
+    <meta name="description" content="Jack Mac's business hub — trading insights, funnel offers, and resources.">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #0a0a0a; color: #e0e0e0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { text-align: center; max-width: 600px; padding: 2rem; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #fff; }
+        p { font-size: 1.1rem; color: #aaa; line-height: 1.6; }
+        .cta { display: inline-block; margin-top: 1.5rem; padding: 0.8rem 2rem; background: #1da1f2; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; }
+        .cta:hover { background: #0d8ddb; }
+    </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>JackMacBiz</h1>
-  <p class="lead">Practical, instant-download digital toolkits — AI workflow kits for coding, presentations, interviews, research, and design. No accounts, no subscriptions: pay once, download, and put it to work.</p>
-  <a class="cta" href="/store/">Browse the store →</a>
-  <div class="links"><a href="/blog/">Read the blog</a></div>
-
-  <!-- email opt-in / lead capture (additive — does not touch checkout) -->
-  <section class="optin" id="optin">
-    <h2>Get the free starter pack</h2>
-    <p>Drop your email and I'll send a free sample toolkit, plus the occasional new release. No spam, unsubscribe anytime.</p>
-    <form id="optin-form" novalidate>
-      <!-- honeypot: hidden from humans, bots fill it -->
-      <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address">
-      <button type="submit">Send it to me →</button>
-      <input type="hidden" name="_subject" value="JackMacBiz homepage lead">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="source" value="homepage">
-      <input type="hidden" name="product_interest" value="starter-pack">
-    </form>
-    <p class="msg" id="optin-msg" role="status"></p>
-    <p class="note">Or email <a href="mailto:jackmacbiz@gmail.com">jackmacbiz@gmail.com</a> directly.</p>
-  </section>
-
-  <footer>© JackMacBiz · <a href="mailto:jackmacbiz@gmail.com">jackmacbiz@gmail.com</a></footer>
-</div>
-
-<script>
-/* Lead capture (additive). Uses a stable hosted form endpoint; on any failure
-   it falls back to mailto so a lead is never silently lost. This script NEVER
-   touches the Stripe buy buttons. */
-(function () {
-  var ENDPOINT = "https://formsubmit.co/ajax/jackmacbiz@gmail.com";
-  var form = document.getElementById("optin-form");
-  var msg = document.getElementById("optin-msg");
-  if (!form) return;
-  function show(text, ok) { msg.textContent = text; msg.className = "msg " + (ok ? "ok" : "err"); }
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var fd = new FormData(form);
-    var email = (fd.get("email") || "").toString().trim();
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { show("Please enter a valid email.", false); return; }
-    var body = new URLSearchParams();
-    fd.forEach(function (v, k) { body.append(k, v); });
-    body.append("page", location.href);
-    var btn = form.querySelector("button"); if (btn) btn.disabled = true;
-    fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() })
-      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
-      .then(function (res) {
-        if (res.ok && res.j && (res.j.ok || res.j.success || res.j.message)) { form.reset(); show("You're in! Check your inbox shortly.", true); }
-        else { throw new Error("bad"); }
-      })
-      .catch(function () {
-        show("Couldn't reach the server — email jackmacbiz@gmail.com and I'll add you.", false);
-        window.location.href = "mailto:jackmacbiz@gmail.com?subject=Send%20me%20the%20starter%20pack&body=" + encodeURIComponent(email);
-      })
-      .finally(function () { if (btn) btn.disabled = false; });
-  });
-})();
-</script>
+    <div class="container">
+        <h1>Jack Mac</h1>
+        <p>Trading insights, business funnels, and actionable resources.</p>
+        <a class="cta" href="https://linktr.ee/jackmactrades" target="_blank" rel="noopener">Get Connected</a>
+    </div>
 </body>
 </html>

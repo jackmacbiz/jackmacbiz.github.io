@@ -1,0 +1,5 @@
+title: JackMacBiz
+description: Digital downloads, art, and templates.
+theme: minima
+plugins:
+  - jekyll-feed
